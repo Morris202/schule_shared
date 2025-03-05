@@ -7,7 +7,7 @@
 
 === Was ist die Protected Users Group?
 
-Die Protected-Users-Group ist eine globale Sicherheisgruppe für das AD, um sich vor Credential-Diebstahl schützen zu können. Die Gruppe triggered Schutzmaßnahmen welche nicht explizit konfiguriert wurden, damit Credential Caching verhindert werden kann.
+Die Protected-Users-Group ist eine globale Sicherheitsgruppe für das AD, um sich vor Credential-Diebstahl schützen zu können. Die Gruppe triggered Schutzmaßnahmen welche nicht explizit konfiguriert wurden, damit Credential Caching verhindert werden kann.
 
 *Vorraussetzungen*
  - Windows Client läuft auf Windows 8.1 oder später
