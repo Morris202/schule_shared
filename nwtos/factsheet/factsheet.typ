@@ -3,9 +3,9 @@
   doc,
   title: [B3 - Factsheet],
   subtitle: none,
-  authors: ("REI (I)", "KRE (I)",),
-  fach: "FACH",
-  thema: "THEMA",
+  authors: ("Lukas Freudensprung", "Abd Sattaar Matitu","Sebastian Trostmann","Morris Tichy",),
+  fach: "NWTOS",
+  thema: "B3 - Factsheet",
   create-outline: true,
   enumerate: true
 )
