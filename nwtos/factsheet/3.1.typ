@@ -30,3 +30,38 @@ Get-ADGroup -Identity "Protected Users" | Add-ADGroupMember –Members "CN=Adam,
 == Credetial Guard
 
 === Was ist der Credential Guard?
+
+Der Credential Guard ist eine Sicherheitsfunktion in Windows 10 und Windows Server 2016, die dazu dient, Anmeldeinformationen zu schützen. Der Credential Guard verwendet Virtualisierungsbasierte Sicherheit, um Anmeldeinformationen zu schützen, indem sie in einem geschützten Bereich des Systems gespeichert werden.
+
+*Vorraussetzungen für Win 11,22H2*
+- Lizenzanforderungen entsprechen
+- Hard und Softwareanforderungen entsprechen
+- Credential Guard wurde nicht explizit deaktiviert
+
+*Vorraussetzungen für Windows Server*
+  - Die Lizensierunganforderungen ensprechen
+  - Die Hard und Software Anforderungen entsprechen
+  - Credential Guard wurde explizit nicht deaktiviert
+  - Teil einer Domäne
+  - Kein Domain Controller
+
+  *Systemanforderungen*
+    - VBS
+    - Secure Boot
+
+  *Optionale features wären:*
+    - Trusted Platform Module (TPM)
+    - UEFI lock
+
+== Checkliste Credential Guard
+- [ ] Vorraussetzungen wie oben beschrieben erfüllt.
+- [ ] Secure Boot aktiviert
+- [ ] Group Policy Management öffnen
+- [ ] Neue Gruppenrichtlinie erstellen
+- [ ] Zu folgendem Pfad navigieren: Computer Configuration -> Administrative Templates -> System -> Device Guard -> Turn on Virtualization Based Security
+- [ ] Gruppenrichtlinie aktivieren
+- [ ] gpupdate /force in der Powershell ausführen
+- [ ] Überprüfung durch Systeminformationen
+
+
+
