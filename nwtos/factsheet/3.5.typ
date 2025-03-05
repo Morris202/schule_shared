@@ -1,6 +1,7 @@
 #import "@preview/cheq:0.2.2": checklist
 #show: checklist
 #import "@preview/codelst:2.0.2": sourcecode
+#import table: cell, header
 = Metasploit Framework
 
 == Theorie
@@ -38,3 +39,34 @@ Nmap ist ein freier Portscan der verwendet wird um Informationen über das Ziels
 #sourcecode[```bash
 Das ist ein Test 1293 
 ```] 
+
+#show table.cell.where(y: 0): strong
+#set table(
+  stroke: (x, y) => if y == 0 {
+    (bottom: 0.7pt + black)
+  },
+  align: (x, y) => (
+    if x > 0 { center }
+    else { left }
+  )
+)
+
+#table(
+  columns: (2fr, 1fr),
+  inset: 10pt,
+  align: horizon,
+  table.header(
+    [Command],
+    [Erklärung],
+  ),
+  [#sourcecode[```bash
+Das ist ein Test 1293 
+asdadhoas
+asdoasdjoas
+```] ],
+  [TEST],
+  [```bash TEST```],
+  [Test],
+  [Potassium Hydroxide],
+  [Test],
+)
