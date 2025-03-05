@@ -17,18 +17,24 @@ Nmap ist ein freier Portscan der verwendet wird um Informationen über das Ziels
 
 == Checkliste
 
-- [ ] Mercury
-- [ ] Venus
-- [ ] Earth (Orbit/Moon)
-- [ ] Mars
-- [ ] Jupiter
-- [ ] Saturn
-- [ ] Uranus
-- [ ] Neptune
-- [ ] Comet Haley
+=== Wordpress
+- [ ] Installation von Docker-Compose
+- [ ] Erstellung von Wordpress Projekt 
+- [ ] Erstellung von YAML Datei 
+- [ ] Start des Projektes
+- [ ] Grundkonfiguration von Wordpress 
+=== Metasploit
+- [ ] Installation von Database Server
+- [ ] Starten von Metasploit
+- [ ] Durchführung von Nmap Scan
+=== Passwort Attacke
+- [ ] Durchführung von wpscan 
+- [ ] Auslesen von User & Passwort
+- [ ] Starten einer Reversed-Shell
+- [ ] Ausführung von Befehlen auf Metasploit
 
 == Befehlsreferenz
 
 #sourcecode[```bash
-Das ist ein Test 1293
+Das ist ein Test 1293 
 ```] 
