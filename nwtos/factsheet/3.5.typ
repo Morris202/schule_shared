@@ -16,7 +16,9 @@ Wordpress ist eine Open-Source-Managment-System, dass dem Nutzer auf einer einfa
 Das Metasploit-Projekt ist ein Projekt zur Computersicherheit, das Informationen über Sicherheitslücken bietet und bei Penetrationstests sowie der Entwicklung von IDS-Signaturen eingesetzt werden kann. Das bekannteste Teilprojekt ist das freie Metasploit Framework, ein Werkzeug zur Entwicklung und Ausführung von Exploits gegen verteilte Zielrechner. Andere wichtige Teilprojekte sind das Shellcode-Archiv und Forschung im Bereich der IT-Sicherheit.
 ==== Nmap
 Nmap ist ein freier Portscan der verwendet wird um Informationen über das Zielsystem herauszufinden. Das Programm schaut nach offenen Ports im Netzwerk und ist beliebt um die Netzwerksicherheit zu gewährleisten. 
-
+\
+\
+\
 == Checkliste
 
 === Wordpress
