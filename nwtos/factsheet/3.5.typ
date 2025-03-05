@@ -38,7 +38,13 @@ Nmap ist ein freier Portscan der verwendet wird um Informationen über das Ziels
 == Befehlsreferenz
 
 #set table(
-  stroke: (x, y) => (bottom: 0.7pt + black),
+  stroke: (x, y) => (
+    if y == 0 {
+      (bottom: 0.7pt + black)
+    } else {
+      (bottom: 0.2pt + gray)
+    }
+  ),
   align: (x, y) => (
     if x > 0 { center }
     else { left }
@@ -69,7 +75,7 @@ Nmap ist ein freier Portscan der verwendet wird um Informationen über das Ziels
   [Installation von Database Server],
   [```bash sudo systemctl start postgresql```],
   [Installation von Database Server],
-   [```bash  msfconsole```],
+   [```bash msfconsole```],
   [Starten von Metasploit],
   [```bash  db_nmap -v -sV 192.168.181.167```],
   [Durchführung von Map Scan],
