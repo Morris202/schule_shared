@@ -1,21 +1,12 @@
 #import "@preview/document:0.1.0": *
-#show: doc => conf(
-  doc,
-  title: [Metasploit],
-  subtitle: none,
-  authors: ("Morris Tichy",),
-  fach: "Little Big Topo",
-  thema: "Metasploit",
-  create-outline: true,
-  enumerate: true
-)
+#import "@preview/codelst:2.0.2": sourcecode
 
 = Metasploit Scan
 Als zweiten Schritt soll mithilfe von Metasploit ein Scan durchgeführt werden. Zuerst erfolgt aber die Installation von Metasploit. Da Metasploit in der Regel auf Kali Linux vorinstalliert ist, verwenden wir dieses. In dem Root teminal werden folgende Befehle ausgeführt, damit Metasploit gestartet wird. Zuerst wird ein Database Server installiert damit alle ergebnisse gespeichert werden können.
-```bash
+#sourcecode[```bash
 sudo systemctl start postgresql
 sudo msfdb init
-```
+```]
 Anschließend wird Metasploit gestartet mit ```bash msfconsole```.
 
 Sobald Metasploit geladen ist, werden Sie die folgende Eingabeaufforderung in Ihrem Terminal sehen - die Startbildschirme sind zufällig, machen Sie sich also keine Sorgen, wenn Ihrer anders aussieht:

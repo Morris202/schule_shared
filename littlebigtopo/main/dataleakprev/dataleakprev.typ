@@ -1,20 +1,12 @@
 #import "@preview/document:0.1.0": *
-#show: doc => conf(
-  doc,
-  title: [Data Leak Prevention],
-  subtitle: none,
-  authors: ("Morris Tichy","Lukas Freudensprung",),
-  fach: "Little Big Topo",
-  thema: "Data Leak Prevention",
-  create-outline: true,
-  enumerate: true
-)
+#import "@preview/codelst:2.0.2": sourcecode
 = Theorie
 Data Leak Prevention (DLP) ist eine Technologie, die den unautorisierten Transfer von sensiblen Daten verhindert. DLP-Systeme überwachen den Datenverkehr und blockieren oder alarmieren, wenn sie sensible Daten erkennen. DLP-Systeme können auf verschiedenen Ebenen des OSI-Modells arbeiten, um Daten zu schützen. DLP-Systeme können auf der Anwendungsschicht arbeiten, um Daten in E-Mails oder Webseiten zu schützen.
 
 = Konfiguration Block Exe Datein
 == DLP
-```bash
+
+#sourcecode[```bash
 config dlp filepattern
     edit 3
         set name "case3-exe"
@@ -46,22 +38,22 @@ config dlp profile
         end
     next
 end
-```
+```]
 
 == Firewall Policy
-```bash
+#sourcecode[```bash
 config firewall policy
     edit 9
         set dlp-profile "profile-case3-type-size"
     next
 end
-```
+```]
 
 = Überprüfung
 Um zu überprüfen, ob die DLP-Konfiguration korrekt ist, geben Sie den folgenden Befehl ein:
-```bash
+#sourcecode[```bash
 show full-configuration dlp profile
-```
+```]
 
 Damit wir die Konfiguration der .exe Datei überprüfen können, wird putty.exe installiert. Wie man auf dem Screenshot sehen kann wird dieser blockiert. 
 #figure(

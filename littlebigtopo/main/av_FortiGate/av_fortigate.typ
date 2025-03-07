@@ -1,8 +1,9 @@
+#import "@preview/codelst:2.0.2": sourcecode
 = Konfiguration FortiGate AV
 == Konfiguration des AV Profiles
 Der AV Profile wird so konfiguriert, dass alle Dateien blockiert werden, die als Virus erkannt werden. Der folgende Code zeigt die Konfiguration des AV Profiles.
 
-```codeblock
+#sourcecode[```bash
 config antivirus profile
     edit "„AV_SVAL“"
         set feature-set proxy
@@ -35,7 +36,7 @@ config antivirus profile
         end
     next
 end
-```
+```]
 
 == Custom-Deep-Inspection
 Anschließend muss die custom deep inspection konfiguriert werden. Dafür muss auf den Ziel Clients das FortiGate Zertifikat installiert werden. Im Firefox-Browser wird das wie folgt gemacht:

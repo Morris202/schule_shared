@@ -1,14 +1,5 @@
 #import "@preview/document:0.1.0": *
-#show: doc => conf(
-  doc,
-  title: [NPS FortiGate Captive Portal],
-  subtitle: none,
-  authors: ("Morris Tichy", "Lukas Freudensprung",),
-  fach: "Little Big Topo",
-  thema: "NPS FortiGate Captive Portal",
-  create-outline: true,
-  enumerate: true
-)
+#import "@preview/codelst:2.0.2": sourcecode
 
 = NPS FortiGate Captive Portal
 Mithilfe des NPS Dienstes unter Windows sollen sich die AD-User auf einer FortiGate oder um ins Internet zu gelangen authentifizieren. Diese Datei beschreibt die Konfiguration des NPS Dienstes und der FortiGate.

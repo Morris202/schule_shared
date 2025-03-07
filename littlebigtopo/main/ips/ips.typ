@@ -1,14 +1,5 @@
 #import "@preview/document:0.1.0": *
-#show: doc => conf(
-  doc,
-  title: [Intrution Prevention System],
-  subtitle: none,
-  authors: ("Morris Tichy","Lukas Freundesprung",),
-  fach: "Little Big Topo",
-  thema: "Intruion Prevention System",
-  create-outline: true,
-  enumerate: true
-)
+#import "@preview/codelst:2.0.2": sourcecode
 = Theorie
 Ein Intrusion Prevention System (IPS) ist eine Technologie, die den unautorisierten Zugriff auf ein Netzwerk verhindert. IPS-Systeme überwachen den Datenverkehr und blockieren oder alarmieren, wenn sie verdächtige Aktivitäten erkennen. IPS-Systeme können auf verschiedenen Ebenen des OSI-Modells arbeiten, um Daten zu schützen. IPS-Systeme können auf der Anwendungsschicht arbeiten, um Daten in E-Mails oder Webseiten zu schützen.
 
