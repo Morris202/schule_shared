@@ -12,8 +12,13 @@
 )
 
 = ISP
+
 = Switching
+
+#include "Switching/Private VLANs/PVLANs.typ"
+
 = Firewalls
+
 #include "Firewalls/av_FortiGate/av_fortigate.typ"
 #include "Firewalls/dataleakprev/dataleakprev.typ"
 #include "Firewalls/ips/ips.typ"
@@ -21,6 +26,7 @@
 #include "Firewalls/fg_bogonblock/fg_bogonblock.typ"
 #include "Firewalls/HA-Cluster/hacluster.typ"
 #include "Firewalls/NPS_FG_CP/nps.typ"
+
 = Active Directory
 
 == Hardening
@@ -31,6 +37,3 @@
 #include "AD/Advanced Security Audit Policies/Advanced_Security_Audit_Policies.typ"
 
 = Linux
-
-
-
