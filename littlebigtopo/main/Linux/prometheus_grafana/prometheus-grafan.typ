@@ -9,37 +9,6 @@ Durch seine flexible Architektur und die Möglichkeit der Integration in verschi
 ==== Was ist Grafana?
 Grafana ist ein Open-Source-Tool, das speziell dafür entwickelt wurde, Daten aus Prometheus grafisch darzustellen. Es ermöglicht die Erstellung detaillierter Dash-boards, die in Echtzeit Einblicke in die Leistung von Systemen wie CPU-Auslastung und Speichernutzung bieten. Mit Grafana können Benutzer Alarme einrichten, um schnell auf ungewöhnliche Aktivitäten reagieren zu können. Es ist das perfekte grafische Tool zur Ergänzung von Prometheus und ein unverzichtbares Werkzeug für IT-Administratoren und Entwickler, die ihre Systemüberwachung optimieren möchten.
 
-==== Komponenten
-*Prometheus Server*
-speichert und wertet Metriken ab, indem er ein Pull-Modell verwendet und Metriken von den zu überwachenden Zielen über das HTTP-basierte Exporter-Protokoll abruft.
-
-*Exporter*
-Metriken die von den überwachten Zielen gesammelt und über HTTP-Endpunkte bereitgestellt werden, dabei wird das Exporter-Protokoll verwendet
-
-*Targets*
-überwachenden Ziele, von denen Prometheus Metriken sammelt, indem es deren HTTP-Endpunkte abfragt
-
-*Grafana*
-Visualisierung von Metriken in Dashboards
-
-*Alertmanager (optional)
-*Benachrichtigen von Benutzern oder Systemen
-
-==== Überwachungs- und Fehlermanagement
-*Alerting:* Wenn ein Fehler auftritt, wird eine Benachrichtigung (Alert) gesendet, um jemanden zu alarmieren.
-
-*Debugging:* Sobald jemand benachrichtigt wurde, muss der Fehler gefunden und behoben werden.
-
-*Trending:* Langzeitüberwachung zur Ressourcenplanung, um die Nutzung und Bedürfnisse besser zu verstehen.
-
-*Plumbing:* Überwachungssysteme fungieren als Datenverarbeitungspipelines und können manchmal für andere Zwecke genutzt werden, anstatt separate maßgeschneiderte Lösungen zu entwickeln.
-
-==== Wie werden Daten ausgewertet?
-Profiling: sammelt begrenzte Kontextinformationen für eine begrenzte Zeit und wird für taktisches Debugging verwendet, erfordert jedoch oft eine Verringerung des Datenvolumens, um in andere Überwachungskategorien zu passen.
-Tracing: selektiert einen Prozentsatz von Ereignissen, um Einblicke in Codepfade und Latenzzeiten zu erhalten, mit der Möglichkeit zur verteilten Nachverfolgung in Mikroservice-Architekturen.
-Logging: zeichnet begrenzte Kontextinformationen für eine bestimmte Anzahl von Ereignissen auf und wird in Kategorien wie Transaktionsprotokollen, Anforder-ungsprotokollen, Anwendungsprotokollen und Debug-Protokollen unterteilt.
-Metrics: erfassen aggregierte Daten über verschiedene Ereignisse im Laufe der Zeit und bieten Einblicke in die Leistung und das Verhalten eines Systems, wobei die Kontextinformationen begrenzt sind, um das Datenvolumen und die Verarbei-tungsanforderungen zu optimieren.
-
 === Installation
 
 ==== Grundkonfiguration Prometheus Server
@@ -118,7 +87,7 @@ scrape_configs: # The job name is added as a label `job=<job_name>` to any times
 systemctl restart prometheus
 systemctl status prometheus
 ```]
-===== Überprüfen des Web-Zugriffs
+==== Überprüfen des Web-Zugriffs
 Danach sollte unter der <IP-Adresse>:9090 der Prometheus Server erreichbar sein. 
 #figure(
   image("webacc.png", width: 70%),
@@ -144,9 +113,6 @@ sudo systemctl restart grafana-server
 sudo systemctl enable grafana-server
 sudo systemctl status grafana-server
 ```]
-
-===== Überprüfung des Web-Zugriffs
-Danach sollte unter der <\IP-Adresse>:3000 der Grafana Server erreichbar sein. Die Anmeldedaten für den Web-Zugriffs sind User: „admin“, Passwort: „admin“. Nach Eingabe von Benutzername und Passwort wird man aufgefordert ein neues Passwort festzulegen. 
 
 ==== Node Explorer Ubuntu
 Damit wir Server auf dem Dashboard anzeigen lassen können, müssen wir auf den Geräten den Node_exporter einrichten. Folgenden Befehle werden dafür ver-wendet.
@@ -179,19 +145,6 @@ systemctl enable node_exporter
 systemctl status node_exporter
 ```]
 
-==== Node Explorer Windows 
-Damit wir Server auf dem Dashboard anzeigen lassen können, müssen wir auf den Geräten den Node_exporter einrichten. Folgenden Befehle werden dafür ver-wendet.
-
-#sourcecode[```bash
-https://github.com/prometheus-community/windows_exporter/releases
--> .msi installieren # Download von Node_exporter
-
-msiexec /i C:\\Users\\Administrator\\Downloads\\windows_exporter-0.25.1-arm64.msi ENABLED_COLLECTORS="ad,cpu"
-```]
-
-Bei Windows ist es wichtig zu beachten, dass der Standardport für den Node-Exporter 9182 ist.
-
-
 === Dashboard einrichten
 Damit die Metriken von den Maschinen in numerische Werte umgewandelt werden, muss ein neues Dashboard angelegt werden. Dazu wird unter *Dashboard > New > Import* kann ein benutzerdefiniertes Dashboard oder ein vorgefertigtes Dash-board importierte werden. Mit der Dashboard ID: 1860 sieht das Dashboard wie folgt aus:
 #figure(
@@ -203,27 +156,6 @@ Unter dem Reiter Jobs können die verschiedenen Geräte ausgewählt werden, die 
 === Alerts
 In Grafana gibt es verschiedene Zustände für Alarmregeln und deren Instanzen, die den aktuellen Status eines Alarms widerspiegeln:
 
-==== Zustände von Alarminstanzen:
-
-*Normal:* Der Zustand eines Alarms, wenn die definierte Bedingung (Schwellenwert) nicht erfüllt ist.
-
-*Pending:* Der Alarm hat den Schwellenwert überschritten, jedoch für weniger als die definierte Wartezeit.
-
-*Alerting:* Der Alarm hat den Schwellenwert für länger als die definierte Wartezeit überschritten und wird als aktiv betrachtet.
-
-*No Data:* Der Alarm erhält keine Daten oder alle Werte sind null.
-
-*Error:* Bei der Auswertung der Alarmregel ist ein Fehler oder ein Timeout aufgetreten.
-
- ==== Zustände von Alarmregeln:
-
-*Normal:* Keine der Alarminstanzen befindet sich im Zustand "Pending" oder "Alerting".
-
-*Pending:* Mindestens eine Alarminstanz befindet sich im Zustand "Pending".
-
-*Firing:* Mindestens eine Alarminstanz befindet sich im Zustand "Alerting".
-
-In unserem Fall konfigurieren wir einen Alert für die CPU-Auslastung. Falls die Auslastung über 0.3 wird, ein Alert erstellt und dieser an den Alert Manager weitergeschickt. Die Konfiguration dieses Alerts beschreibt die nachfolgenden Screenshots. 
 
 #figure(
   image("rulename.png", width: 70%),
@@ -247,7 +179,7 @@ In dieser Abbildung ist zu erkennen, dass die CPU Auslastung ausgewertet wird. F
   caption: [Dashboard und Link festlegen]
 )
 
-Nachdem die Regel konfiguriert kann anschließend noch ein Alert Manager eingebunden werden.  Der Alert Manager ist ein System, das es ermöglicht, Benachrichtigungen über Alerts zu senden. 
+Nachdem die Regel konfiguriert wurde kann anschließend noch ein Alert Manager eingebunden werden.  Der Alert Manager ist ein System, das es ermöglicht, Benachrichtigungen über Alerts zu senden. 
 
 === Alert Manager 
 Der Alert Manager wurde lokal auf der Prometheus Maschine installiert. Die Konfiguration des Alert Managers wird in der Datei prometheus.yml beschrieben. 
