@@ -4,6 +4,7 @@
 == Linux Firewall mit iptables
 iptables ist ein Paketfilter-Firewall-Framework für den Linux-Kernel. Es ermöglicht die Kontrolle des Netzwerkverkehrs basierend auf vordefinierten Regeln. iptables arbeitet auf der Netzwerkebene und nutzt verschiedene Tabellen und Chains zur Verarbeitung von Paketen.
 
+=== Konfiguration
 Die Firewall dient für die Verbindung zwischen den Standorten via Wireguard sowie NAT. 
 #sourcecode[```bash
 #!/bin/bash
