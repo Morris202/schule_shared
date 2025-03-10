@@ -19,7 +19,7 @@ Nachdem der NPS Server grundkonfiguriert wurde und der Network Policy Server ins
 - Geben Sie den 'Friendly name', die IP-Adresse und das Passwort ein (das gleiche Passwort, das auf der FortiGate konfiguriert wurde).
 - Der Rest kann auf den Standardwerten belassen werden.
 
-==== Connection Request Policies
+=== Connection Request Policies
 + Erstellen Sie eine 'Connection Request Policy' für die FortiGate (wählen Sie 'Connection Request Policies' und wählen Sie 'Neu').
 + Geben Sie den 'Policy name' an und wählen Sie 'Weiter'.
 + Unter 'Specify Conditions' wählen Sie 'Add…' und wählen Sie 'Client IPv4 Address' und geben Sie die IP-Adresse der FortiGate an.
@@ -33,7 +33,7 @@ Nachdem der NPS Server grundkonfiguriert wurde und der Network Policy Server ins
   caption: [Connection Request Policy]
 )
 
-==== Network Policies
+=== Network Policies
 + Erstelle eine 'Network Policy' für Zugriffsanfragen, die von der FortiGate kommen (wählen Sie 'Network Policies' und wählen Sie 'Neu'). NPS -> Policies -> Network Policies.
 + Geben Sie den 'Policy name' an und wählen Sie 'Weiter'.
 
@@ -50,7 +50,7 @@ Wenn Sie fertig sind, bestätigen Sie die Einstellungen mit 'OK' und 'Hinzufüge
   caption: [Funktionsbereite Network Policy]
 )
 
-==== Vendor Specific Attributes
+=== Vendor Specific Attributes
 
 #figure(
   image("vendor.png", width: 70%),
@@ -77,7 +77,7 @@ Anschließend wird eine neue User Group erstellt die als Remote Server den NPS S
   caption: [Captive Portal Konfiguration]
 )
 
-= Test
+=== Überprüfung
 Wenn alle Konfigurationschriffe durchgeführt wurden, sollte sich ein AD-User auf der FortiGate oder im Internet authentifizieren können. Folgendes sollte passieren:
 
 #figure(

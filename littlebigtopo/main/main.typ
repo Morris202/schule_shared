@@ -19,6 +19,7 @@
 #include "Firewalls/fg_bogonblock/fg_bogonblock.typ"
 #include "Firewalls/HA-Cluster/hacluster.typ"
 #include "Firewalls/ips/ips.typ"
+#include "Firewalls/NPS_FG_CP/nps.typ"
 = Active Directory
 = Linux
 
