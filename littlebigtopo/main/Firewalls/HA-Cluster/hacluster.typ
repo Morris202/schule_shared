@@ -1,6 +1,6 @@
 #import "@preview/document:0.1.0": *
 #import "@preview/codelst:2.0.2": sourcecode
-== Theorie
+== FortiGate HA-Cluster
 === Was ist ein HA-Cluster?
 Ein HA-Cluster (High Availability Cluster) ist ein System, das aus zwei oder mehr Rechnern besteht, die zusammenarbeiten, um eine hohe Verfügbarkeit von Diensten zu gewährleisten. Ein HA-Cluster kann so konfiguriert werden, dass er automatisch auf einen anderen Rechner umschaltet, wenn einer der Rechner ausfällt. Dies wird als Failover bezeichnet. Ein HA-Cluster kann auch so konfiguriert werden, dass er Lasten zwischen den Rechnern verteilt, um die Leistung zu verbessern. Dies wird als Load Balancing bezeichnet.
 
@@ -8,7 +8,7 @@ Es gibt bei der FortiGate zwei verschiedene Arten von HA-Clustern:
 - Active-Passive: Hier ist nur ein Gerät aktiv und das andere Gerät ist im Standby-Modus. (failover)
 - Active-Active: Hier sind beide Geräte aktiv und teilen sich die Last. (load-balancing)
 
-== Konfiguration eines HA-Clusters
+=== Konfiguration eines HA-Clusters
 Die beiden FortiGate sind mithilfe eines Kabels verbunden. Man nennt dieses das Heartbeat-Interface, darüber läuft der Traffic zwischen den beiden Geräten.
 
 #sourcecode[```bash

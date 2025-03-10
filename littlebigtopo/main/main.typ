@@ -14,8 +14,12 @@
 = ISP
 = Switching
 = Firewalls
+#include "Firewalls/av_FortiGate/av_fortigate.typ"
+#include "Firewalls/dataleakprev/dataleakprev.typ"
+#include "Firewalls/fg_bogonblock/fg_bogonblock.typ"
+#include "Firewalls/HA-Cluster/hacluster.typ"
 = Active Directory
 = Linux
 
 
-#include "av_FortiGate/av_fortigate.typ"
+

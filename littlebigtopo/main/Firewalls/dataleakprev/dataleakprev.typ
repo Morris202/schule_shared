@@ -1,11 +1,9 @@
 #import "@preview/document:0.1.0": *
 #import "@preview/codelst:2.0.2": sourcecode
-== Theorie
+== Data Leak Prevention
 Data Leak Prevention (DLP) ist eine Technologie, die den unautorisierten Transfer von sensiblen Daten verhindert. DLP-Systeme überwachen den Datenverkehr und blockieren oder alarmieren, wenn sie sensible Daten erkennen. DLP-Systeme können auf verschiedenen Ebenen des OSI-Modells arbeiten, um Daten zu schützen. DLP-Systeme können auf der Anwendungsschicht arbeiten, um Daten in E-Mails oder Webseiten zu schützen.
 
-== Konfiguration Block Exe Datein
-=== DLP
-
+=== Konfiguration Block Exe Datein
 #sourcecode[```bash
 config dlp filepattern
     edit 3
@@ -49,7 +47,7 @@ config firewall policy
 end
 ```]
 
-== Überprüfung
+=== Überprüfung
 Um zu überprüfen, ob die DLP-Konfiguration korrekt ist, geben Sie den folgenden Befehl ein:
 #sourcecode[```bash
 show full-configuration dlp profile
