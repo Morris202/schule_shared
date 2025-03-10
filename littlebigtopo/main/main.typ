@@ -31,9 +31,9 @@
 
 == Hardening
 
-#include "AD/GPOs/GPOs.typ"
+#include "AD/Hardening/GPOs/GPOs.typ"
 #include "AD/Credentials Protection/Credentials_Protection.typ"
-#include "AD/Windows Security Baseline/Windows_Security_Baseline.typ"
-#include "AD/Advanced Security Audit Policies/Advanced_Security_Audit_Policies.typ"
+#include "AD/Hardening/Windows Security Baseline/Windows_Security_Baseline.typ"
+#include "AD/Hardening/Advanced Security Audit Policies/Advanced_Security_Audit_Policies.typ"
 
 = Linux
