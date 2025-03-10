@@ -29,6 +29,10 @@
 
 = Active Directory
 
+== ADDS
+
+#include "AD/ADDS/ADDS.typ"
+
 == Hardening
 
 #include "AD/Hardening/GPOs/GPOs.typ"
