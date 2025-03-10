@@ -1,10 +1,10 @@
 #import "@preview/document:0.1.0": *
 #import "@preview/codelst:2.0.2": sourcecode
 
-= NPS FortiGate Captive Portal
+== NPS FortiGate Captive Portal
 Mithilfe des NPS Dienstes unter Windows sollen sich die AD-User auf einer FortiGate oder um ins Internet zu gelangen authentifizieren. Diese Datei beschreibt die Konfiguration des NPS Dienstes und der FortiGate.
 
-== NPS Konfiguration
+=== NPS Konfiguration
 Nachdem der NPS Server grundkonfiguriert wurde und der Network Policy Server installiert ist, wird zuerst ein neuer Radius-Client erstellt. *NPS > Radius Client und Server > Radius Clients >* Neu. Hier wird die IP-Adresse der FortiGate und ein gemeinsames Passwort eingetragen.
 
 #figure(
@@ -19,7 +19,7 @@ Nachdem der NPS Server grundkonfiguriert wurde und der Network Policy Server ins
 - Geben Sie den 'Friendly name', die IP-Adresse und das Passwort ein (das gleiche Passwort, das auf der FortiGate konfiguriert wurde).
 - Der Rest kann auf den Standardwerten belassen werden.
 
-=== Connection Request Policies
+==== Connection Request Policies
 + Erstellen Sie eine 'Connection Request Policy' für die FortiGate (wählen Sie 'Connection Request Policies' und wählen Sie 'Neu').
 + Geben Sie den 'Policy name' an und wählen Sie 'Weiter'.
 + Unter 'Specify Conditions' wählen Sie 'Add…' und wählen Sie 'Client IPv4 Address' und geben Sie die IP-Adresse der FortiGate an.
@@ -33,7 +33,7 @@ Nachdem der NPS Server grundkonfiguriert wurde und der Network Policy Server ins
   caption: [Connection Request Policy]
 )
 
-=== Network Policies
+==== Network Policies
 + Erstelle eine 'Network Policy' für Zugriffsanfragen, die von der FortiGate kommen (wählen Sie 'Network Policies' und wählen Sie 'Neu'). NPS -> Policies -> Network Policies.
 + Geben Sie den 'Policy name' an und wählen Sie 'Weiter'.
 
@@ -50,7 +50,7 @@ Wenn Sie fertig sind, bestätigen Sie die Einstellungen mit 'OK' und 'Hinzufüge
   caption: [Funktionsbereite Network Policy]
 )
 
-=== Vendor Specific Attributes
+==== Vendor Specific Attributes
 
 #figure(
   image("vendor.png", width: 70%),
@@ -62,7 +62,7 @@ Wenn Sie fertig sind, bestätigen Sie die Einstellungen mit 'OK' und 'Hinzufüge
 + Dürcken sie nun auf Configure Attribute und geben Sie die Attribute ein. vendor: 12356, attribute: 1, as string: Domain_User.
 + Überprüfen der Konfiguration und Finish
 
-== FortiGate Konfiguration
+=== FortiGate Konfiguration
 Nachdem der NPS Server konfiguriert wurde, wird die FortiGate konfiguriert. Dazu wird ein neuer Radius-Server erstellt. *User & Device > Radius Servers >* Neu. Hier wird die IP-Adresse des NPS Servers und das gemeinsame Passwort eingetragen. Unter Test Connectivity kann die Verbindung getestet werden und mit Test Credentials kann ein Anmeldevorgang simuliert werden.
 
 #figure(

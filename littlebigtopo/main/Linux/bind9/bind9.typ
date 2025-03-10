@@ -1,10 +1,10 @@
 #import "@preview/document:0.1.0": *
 #import "@preview/codelst:2.0.2": sourcecode
 
-= Bind9 Forwarder 
+== Bind9 Forwarder 
 Ein Forwarder in der DNS-Welt ist ein DNS-Server, der Anfragen an einen anderen DNS-Server weiterleitet, anstatt sie selbst zu beantworten. BIND9, als einer der beliebtesten DNS-Server, ermöglicht es, Anfragen an sogenannte Forwarder-Server weiterzuleiten, wenn der BIND9-Server selbst die Anfrage nicht lösen kann. 
 
-== Checkliste 
+=== Checkliste 
 - Installieren des Diensts 
 - Forwarder Konfigurieren 
 - Konfiguration überprüfen 
@@ -15,7 +15,7 @@ Ein Forwarder in der DNS-Welt ist ein DNS-Server, der Anfragen an einen anderen 
 sudo apt install bind9 bind9utils bind9-doc dnsutils 
 ```]
 
-== Forwarder Konfigurieren 
+=== Forwarder Konfigurieren 
 #sourcecode[```bash
 options { 
   directory "/var/cache/bind"; 
@@ -37,7 +37,7 @@ options {
 \
 \
 \
-=== Konfiguration überprüfen 
+==== Konfiguration überprüfen 
 #sourcecode[
 ```bash sudo named-checkconf``` 
 ]

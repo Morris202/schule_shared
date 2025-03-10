@@ -11,4 +11,11 @@
   enumerate: true
 )
 
+= ISP
+= Switching
+= Firewalls
+= Active Directory
+= Linux
+
+
 #include "av_FortiGate/av_fortigate.typ"

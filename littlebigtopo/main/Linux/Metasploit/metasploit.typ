@@ -1,7 +1,7 @@
 #import "@preview/document:0.1.0": *
 #import "@preview/codelst:2.0.2": sourcecode
 
-= Metasploit Scan
+== Metasploit Scan
 Als zweiten Schritt soll mithilfe von Metasploit ein Scan durchgeführt werden. Zuerst erfolgt aber die Installation von Metasploit. Da Metasploit in der Regel auf Kali Linux vorinstalliert ist, verwenden wir dieses. In dem Root teminal werden folgende Befehle ausgeführt, damit Metasploit gestartet wird. Zuerst wird ein Database Server installiert damit alle ergebnisse gespeichert werden können.
 #sourcecode[```bash
 sudo systemctl start postgresql
@@ -18,7 +18,7 @@ Sobald Metasploit geladen ist, werden Sie die folgende Eingabeaufforderung in Ih
 
 Mit dem Befehl ```bash search portscan``` wird eine Liste aller verfügbaren Portscannern zurückgeliefert. 
 
-== Nmap Scan
+=== Nmap Scan
 Mit dem Befehl ```bash db_nmap -v -sV 192.168.50.0/24``` wird ein Nmap Scan durchgeführt. Dieser Scan zeigt alle offenen Ports und die Versionen der Dienste, die auf diesen Ports laufen.
 
 #figure(

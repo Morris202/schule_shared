@@ -1,9 +1,9 @@
 #import "@preview/document:0.1.0": *
 #import "@preview/codelst:2.0.2": sourcecode
-= Theorie
+== Theorie
 Bogon sind private Adressen, die im öffentlichen Netz geblockt werden sollen. Auf der FortiGate werden daher eine local-in-policy erstellt die dazu dienen diese Adressen zu blockieren. Folgender Code blockiert diese Adressen.
 
-= Konfiguration
+== Konfiguration
 
 #sourcecode[```bash
 config firewall address

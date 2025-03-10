@@ -1,15 +1,15 @@
 #import "@preview/document:0.1.0": *
 #import "@preview/codelst:2.0.2": sourcecode
-= Prometheus/Grafana
-== Theorie
-=== Was ist Prometheus?
+== Prometheus/Grafana
+=== Theorie
+==== Was ist Prometheus?
 Prometheus ist ein Open-Source-Überwachungstool, das auf Metriken basiert und speziell für die Überwachung von Anwendungen und Infrastruktur entwickelt wurde. Es ermöglicht die Erfassung und Analyse von Leistungsdaten wie CPU-Auslastung, Speichernutzung und Netzwerkauslastung, was dabei hilft, die Effizienz und Stabilität von IT-Systemen zu gewährleisten. 
 Durch seine flexible Architektur und die Möglichkeit der Integration in verschie-dene Systeme ist Prometheus ein wertvolles Werkzeug für Entwickler und IT-Administratoren, um die Gesundheit ihrer Systeme zu überwachen und Probleme frühzeitig zu erkennen.
 
-=== Was ist Grafana?
+==== Was ist Grafana?
 Grafana ist ein Open-Source-Tool, das speziell dafür entwickelt wurde, Daten aus Prometheus grafisch darzustellen. Es ermöglicht die Erstellung detaillierter Dash-boards, die in Echtzeit Einblicke in die Leistung von Systemen wie CPU-Auslastung und Speichernutzung bieten. Mit Grafana können Benutzer Alarme einrichten, um schnell auf ungewöhnliche Aktivitäten reagieren zu können. Es ist das perfekte grafische Tool zur Ergänzung von Prometheus und ein unverzichtbares Werkzeug für IT-Administratoren und Entwickler, die ihre Systemüberwachung optimieren möchten.
 
-=== Komponenten
+==== Komponenten
 *Prometheus Server*
 speichert und wertet Metriken ab, indem er ein Pull-Modell verwendet und Metriken von den zu überwachenden Zielen über das HTTP-basierte Exporter-Protokoll abruft.
 
@@ -25,7 +25,7 @@ Visualisierung von Metriken in Dashboards
 *Alertmanager (optional)
 *Benachrichtigen von Benutzern oder Systemen
 
-=== Überwachungs- und Fehlermanagement
+==== Überwachungs- und Fehlermanagement
 *Alerting:* Wenn ein Fehler auftritt, wird eine Benachrichtigung (Alert) gesendet, um jemanden zu alarmieren.
 
 *Debugging:* Sobald jemand benachrichtigt wurde, muss der Fehler gefunden und behoben werden.
@@ -34,15 +34,15 @@ Visualisierung von Metriken in Dashboards
 
 *Plumbing:* Überwachungssysteme fungieren als Datenverarbeitungspipelines und können manchmal für andere Zwecke genutzt werden, anstatt separate maßgeschneiderte Lösungen zu entwickeln.
 
-=== Wie werden Daten ausgewertet?
+==== Wie werden Daten ausgewertet?
 Profiling: sammelt begrenzte Kontextinformationen für eine begrenzte Zeit und wird für taktisches Debugging verwendet, erfordert jedoch oft eine Verringerung des Datenvolumens, um in andere Überwachungskategorien zu passen.
 Tracing: selektiert einen Prozentsatz von Ereignissen, um Einblicke in Codepfade und Latenzzeiten zu erhalten, mit der Möglichkeit zur verteilten Nachverfolgung in Mikroservice-Architekturen.
 Logging: zeichnet begrenzte Kontextinformationen für eine bestimmte Anzahl von Ereignissen auf und wird in Kategorien wie Transaktionsprotokollen, Anforder-ungsprotokollen, Anwendungsprotokollen und Debug-Protokollen unterteilt.
 Metrics: erfassen aggregierte Daten über verschiedene Ereignisse im Laufe der Zeit und bieten Einblicke in die Leistung und das Verhalten eines Systems, wobei die Kontextinformationen begrenzt sind, um das Datenvolumen und die Verarbei-tungsanforderungen zu optimieren.
 
-== Installation
+=== Installation
 
-=== Grundkonfiguration Prometheus Server
+==== Grundkonfiguration Prometheus Server
 Die folgenden Konfigurationen wurden auf dem Ubuntu Server bzw. auf dem Pro-metheus eingefügt.
 
 #sourcecode[```bash  
@@ -67,7 +67,7 @@ sudo netplan apply
 ```]
 Mit dieser Konfiguration werden die Netzwerk Einstellungen festlegt. 
 
-=== Installation Prometheus 
+==== Installation Prometheus 
 Anschließend wird auf dem Prometheusserver die verschiedenen Dienste für Prometheus installiert.
 
 #sourcecode[```bash  
@@ -118,14 +118,14 @@ scrape_configs: # The job name is added as a label `job=<job_name>` to any times
 systemctl restart prometheus
 systemctl status prometheus
 ```]
-==== Überprüfen des Web-Zugriffs
+===== Überprüfen des Web-Zugriffs
 Danach sollte unter der <IP-Adresse>:9090 der Prometheus Server erreichbar sein. 
 #figure(
   image("webacc.png", width: 70%),
   caption: [Prometheus Web Access]
 )
 
-=== Installation Grafana
+==== Installation Grafana
 
 #sourcecode[```bash
 sudo apt-get install -y adduser libfontcon-fig1 musl # Installation von Installationn der Abhängigkeiten für Grafana
@@ -145,10 +145,10 @@ sudo systemctl enable grafana-server
 sudo systemctl status grafana-server
 ```]
 
-==== Überprüfung des Web-Zugriffs
+===== Überprüfung des Web-Zugriffs
 Danach sollte unter der <\IP-Adresse>:3000 der Grafana Server erreichbar sein. Die Anmeldedaten für den Web-Zugriffs sind User: „admin“, Passwort: „admin“. Nach Eingabe von Benutzername und Passwort wird man aufgefordert ein neues Passwort festzulegen. 
 
-=== Node Explorer Ubuntu
+==== Node Explorer Ubuntu
 Damit wir Server auf dem Dashboard anzeigen lassen können, müssen wir auf den Geräten den Node_exporter einrichten. Folgenden Befehle werden dafür ver-wendet.
 
 #sourcecode[```bash
@@ -179,7 +179,7 @@ systemctl enable node_exporter
 systemctl status node_exporter
 ```]
 
-=== Node Explorer Windows 
+==== Node Explorer Windows 
 Damit wir Server auf dem Dashboard anzeigen lassen können, müssen wir auf den Geräten den Node_exporter einrichten. Folgenden Befehle werden dafür ver-wendet.
 
 #sourcecode[```bash
@@ -192,7 +192,7 @@ msiexec /i C:\\Users\\Administrator\\Downloads\\windows_exporter-0.25.1-arm64.ms
 Bei Windows ist es wichtig zu beachten, dass der Standardport für den Node-Exporter 9182 ist.
 
 
-== Dashboard einrichten
+=== Dashboard einrichten
 Damit die Metriken von den Maschinen in numerische Werte umgewandelt werden, muss ein neues Dashboard angelegt werden. Dazu wird unter *Dashboard > New > Import* kann ein benutzerdefiniertes Dashboard oder ein vorgefertigtes Dash-board importierte werden. Mit der Dashboard ID: 1860 sieht das Dashboard wie folgt aus:
 #figure(
   image("dashboard.png", width: 70%),
@@ -200,10 +200,10 @@ Damit die Metriken von den Maschinen in numerische Werte umgewandelt werden, mus
 )
 Unter dem Reiter Jobs können die verschiedenen Geräte ausgewählt werden, die davor in der prometheus.yml Datei angelegt wurden.  Nach der Konfiguartion des Dashboards kann man Alerts festlegen, die in unserem Fall die CPU-Auslastung überwacht. 
 
-== Alerts
+=== Alerts
 In Grafana gibt es verschiedene Zustände für Alarmregeln und deren Instanzen, die den aktuellen Status eines Alarms widerspiegeln:
 
-=== Zustände von Alarminstanzen:
+==== Zustände von Alarminstanzen:
 
 *Normal:* Der Zustand eines Alarms, wenn die definierte Bedingung (Schwellenwert) nicht erfüllt ist.
 
@@ -215,7 +215,7 @@ In Grafana gibt es verschiedene Zustände für Alarmregeln und deren Instanzen, 
 
 *Error:* Bei der Auswertung der Alarmregel ist ein Fehler oder ein Timeout aufgetreten.
 
- === Zustände von Alarmregeln:
+ ==== Zustände von Alarmregeln:
 
 *Normal:* Keine der Alarminstanzen befindet sich im Zustand "Pending" oder "Alerting".
 
@@ -249,7 +249,7 @@ In dieser Abbildung ist zu erkennen, dass die CPU Auslastung ausgewertet wird. F
 
 Nachdem die Regel konfiguriert kann anschließend noch ein Alert Manager eingebunden werden.  Der Alert Manager ist ein System, das es ermöglicht, Benachrichtigungen über Alerts zu senden. 
 
-== Alert Manager 
+=== Alert Manager 
 Der Alert Manager wurde lokal auf der Prometheus Maschine installiert. Die Konfiguration des Alert Managers wird in der Datei prometheus.yml beschrieben. 
 #sourcecode[```bash
 wget https://github.com/prometheus/alertmanager/releases/download/v0.23.0/alertmanager-0.23.0.linux-amd64.tar.gz # Download von Alert Manager
@@ -304,7 +304,7 @@ Abschließend muss das Prometheus Service neu gestartet werden.
 sudo systemctl restart prometheus.service
 ```]
 
-== Testen 
+=== Testen 
 Wenn man jetzt den NTP-Server neustartet geht die CPU Auslastung hoch und wir bekommen zweimal einen Alert. In Grafana steht Firing, dass beschreibt das sich eine Alarminstanz in Alerting befindent. In Grafana ist diese Nachricht bei den Alerts zu sehen. 
 
 #figure(

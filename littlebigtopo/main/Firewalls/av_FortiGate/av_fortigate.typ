@@ -1,7 +1,7 @@
 #import "@preview/codelst:2.0.2": sourcecode
-= Konfiguration FortiGate AV
-== Konfiguration des AV Profiles
-Der AV Profile wird so konfiguriert, dass alle Dateien blockiert werden, die als Virus erkannt werden. Der folgende Code zeigt die Konfiguration des AV Profiles.
+== Konfiguration FortiGate AV
+=== Konfiguration des AV Profiles
+Das AV Profile wird so konfiguriert, dass alle Dateien blockiert werden, die als Virus erkannt werden. Der folgende Code zeigt die Konfiguration des AV Profiles.
 
 #sourcecode[```bash
 config antivirus profile
@@ -38,7 +38,7 @@ config antivirus profile
 end
 ```]
 
-== Custom-Deep-Inspection
+=== Custom-Deep-Inspection
 Anschließend muss die custom deep inspection konfiguriert werden. Dafür muss auf den Ziel Clients das FortiGate Zertifikat installiert werden. Im Firefox-Browser wird das wie folgt gemacht:
 
 #figure(
@@ -46,7 +46,7 @@ Anschließend muss die custom deep inspection konfiguriert werden. Dafür muss a
   caption: [FireFox Zertifikat installieren]
 )
 
-=== AV Testen
+==== AV Testen
 Damit der AV nun getestet werden kann, wird eine Datei von der Website www.eicar.org installiert. Diese Datei ist ein Testvirus und wird von den meisten AV-Programmen erkannt. Wenn der AV funktioniert, wird die Datei blockiert und der Benutzer sieht folgenden Output.
 
 #figure(
