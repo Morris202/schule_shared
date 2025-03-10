@@ -7,7 +7,7 @@ Der Web-Filter der FortiGate ist zuständig, um den Client auf gewisse Website d
   image("webfilter.png", width: 70%),
   caption: [URL Filter]
 )
-
+=== Überprüfung
 Falls Clients dann versuchen auf die Website zu gelangen sehen sie Folgenden Alert.
 
 #figure(
