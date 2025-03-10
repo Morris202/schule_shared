@@ -1,27 +1,18 @@
 #import "@preview/document:0.1.0": *
-#show: doc => conf(
-  doc,
-  title: [Advanced Security Audit Policies],
-  subtitle: none,
-  authors: ("Morris Tichy, Lukas Freudensprung",),
-  fach: "NWTK",
-  thema: "Little Big Topo",
-  create-outline: true,
-  enumerate: true,
-)
+#import "@preview/codelst:2.0.2": sourcecode
 
-= Advanced Security Audit Policies
+=== Advanced Security Audit Policies
 
 Die Advanced Security Audit Policies ermöglichen eine detaillierte Kontrolle über sicherheitsrelevante Ereignisse im Netzwerk. Sie erweitern die klassischen Audit Policies und bieten granulare Einstellungsmöglichkeiten zur Überwachung sicherheitskritischer Prozesse.
 
-== Nutzen/Vorteil
+==== Nutzen/Vorteil
 
 - Verbesserte Transparenz und Nachvollziehbarkeit von sicherheitsrelevanten Ereignissen
 - Frühe Erkennung von Sicherheitsvorfällen
 - Einhaltung von Compliance-Vorgaben
 - Präzisere Kontrolle durch detaillierte Audit-Kategorien
 
-== GPO Konfiguration
+==== GPO Konfiguration
 
 - Group Policy Management öffnen
 - Eine neue GPO unter OU erstellen
@@ -34,10 +25,9 @@ Die Advanced Security Audit Policies ermöglichen eine detaillierte Kontrolle ü
  - DS Access -> Audit Directory Service Changes
 - Apply und OK drücken
 
-== Überprüfung
+==== Überprüfung
 
-=== Event Viewer
-
+*Event Viewer*\
 - Windows Logs -> Security
 - Filtern nach Event-IDs:
  - 4720 (Benutzerkonto erstellt)
@@ -47,19 +37,18 @@ Die Advanced Security Audit Policies ermöglichen eine detaillierte Kontrolle ü
  - 5136 (Directory Service Änderungen)
 - Dokumentiere relevante Einträge
 
-=== PowerShell
-
+*PowerShell*\
 Aktive Audit Policies anzeigen:
-```bash
+#sourcecode[```bash
 auditpol /get /category:*
-```
+```]
 
 Überprüfen, ob ein spezifisches Audit-Event aktiviert ist:
-```bash
+#sourcecode[```bash
 auditpol /get /subcategory:"User Account Management"
-```
+```]
 
 Ereignisse aus dem Event Log abrufen:
-```bash
+#sourcecode[```bash
 Get-WinEvent -LogName "Security" | Where-Object { $_.Id -eq 4720 }
-```
+```]
