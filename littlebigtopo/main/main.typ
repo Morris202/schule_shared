@@ -42,3 +42,4 @@
 #include "Linux/prometheus_grafana/prometheus-grafan.typ"
 #include "Linux/wireguard/wireguard.typ"
 #include "Linux/syslog/syslog.typ"
+#include "Linux/LinuxFW/linuxfw.typ"
