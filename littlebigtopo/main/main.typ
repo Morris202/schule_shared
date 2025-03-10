@@ -26,7 +26,7 @@
 #include "Firewalls/HA-Cluster/hacluster.typ"
 #include "Firewalls/vpn_psk/vpn_psk.typ"
 #include "Firewalls/NPS_FG_CP/nps.typ"
-
+#include "Firewalls/staticnat/staticnat.typ"
 = Active Directory
 
 == Hardening
@@ -37,3 +37,8 @@
 #include "AD/Hardening/Advanced Security Audit Policies/Advanced_Security_Audit_Policies.typ"
 
 = Linux
+#include "Linux/bind9/bind9.typ"
+#include "Linux/Metasploit/metasploit.typ"
+#include "Linux/prometheus_grafana/prometheus-grafan.typ"
+#include "Linux/wireguard/wireguard.typ"
+#include "Linux/syslog/syslog.typ"
