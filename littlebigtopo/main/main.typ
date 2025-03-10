@@ -20,6 +20,10 @@
 #include "Firewalls/HA-Cluster/hacluster.typ"
 #include "Firewalls/ips/ips.typ"
 = Active Directory
+
+#include "AD/Advanced Security Audit Policies/main.typ"
+#include "AD/Credentials Protection/main.typ"
+
 = Linux
 
 
