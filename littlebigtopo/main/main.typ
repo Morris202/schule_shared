@@ -14,12 +14,14 @@
 = ISP
 = Switching
 = Firewalls
+#include "Firewalls/policy/policy.typ"
 #include "Firewalls/av_FortiGate/av_fortigate.typ"
 #include "Firewalls/dataleakprev/dataleakprev.typ"
 #include "Firewalls/ips/ips.typ"
 #include "Firewalls/webfilter/webfilter.typ"
 #include "Firewalls/fg_bogonblock/fg_bogonblock.typ"
 #include "Firewalls/HA-Cluster/hacluster.typ"
+#include "Firewalls/vpn_psk/vpn_psk.typ"
 #include "Firewalls/NPS_FG_CP/nps.typ"
 = Active Directory
 
@@ -27,7 +29,6 @@
 #include "AD/Credentials Protection/Credentials_Protection.typ"
 #include "AD/GPOs/GPOs.typ"
 #include "AD/Windows Security Baseline/Windows_Security_Baseline.typ"
-
 = Linux
 
 
