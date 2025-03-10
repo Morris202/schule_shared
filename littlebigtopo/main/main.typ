@@ -18,6 +18,7 @@
 #include "Firewalls/dataleakprev/dataleakprev.typ"
 #include "Firewalls/fg_bogonblock/fg_bogonblock.typ"
 #include "Firewalls/HA-Cluster/hacluster.typ"
+#include "Firewalls/ips/ips.typ"
 = Active Directory
 = Linux
 

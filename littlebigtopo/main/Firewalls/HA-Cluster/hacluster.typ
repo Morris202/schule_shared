@@ -35,6 +35,7 @@ Es kann vorkommen, dass nach der Konfiguration die zwei Nodes nicht synchronized
 execute ha synchronize all
 ```]
 
+=== Überprüfung
 Falls, alles richtig funktioniert sehen wir in der GUI folgendes. 
 #figure(
   image("hacluster.png", width: 70%),
