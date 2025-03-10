@@ -23,8 +23,10 @@
 #include "Firewalls/NPS_FG_CP/nps.typ"
 = Active Directory
 
-#include "AD/Advanced Security Audit Policies/main.typ"
-#include "AD/Credentials Protection/main.typ"
+#include "AD/Advanced Security Audit Policies/Advanced_Security_Audit_Policies.typ"
+#include "AD/Credentials Protection/Credentials_Protection.typ"
+#include "AD/GPOs/GPOs.typ"
+#include "AD/Windows Security Baseline/Windows_Security_Baseline.typ"
 
 = Linux
 
