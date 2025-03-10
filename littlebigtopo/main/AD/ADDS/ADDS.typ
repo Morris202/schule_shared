@@ -3,7 +3,7 @@
 
 === DC1
 
-==== Grundkonfiguration
+*Grundkonfiguration*
 
 #sourcecode[```bash
 Rename-Computer -NewName "DC1"
@@ -19,7 +19,7 @@ Set-TimeZone -Id "W. Europe Standard Time"
 Restart-Computer
 ```]
 
-==== Forest Root Domäne AvengerHQ.at erstellen
+*Forest Root Domäne AvengerHQ.at erstellen*
 
 #sourcecode[```bash
 # Features installieren
@@ -34,7 +34,7 @@ Restart-Computer
 
 === DC2
 
-==== Grundkonfiguration
+*Grundkonfiguration*
 
 #sourcecode[```bash
 Rename-Computer -NewName "DC2"
@@ -50,7 +50,7 @@ Set-TimeZone -Id "W. Europe Standard Time"
 Restart-Computer
 ```]
 
-==== AvengerHQ.at beitreten
+*AvengerHQ.at beitreten*
 
 #sourcecode[```bash
 # Features installieren
@@ -64,9 +64,61 @@ Install-ADDSDomainController -DomainName "AvengerHQ.at" -Sitename Default-First-
 Set-DnsClientServerAddress -InterfaceAlias "LAN" -ServerAddresses ("192.168.50.2", "192.168.50.1")
 ```]
 
+=== WinCLI1
+
+*Grundkonfiguration*
+
+#sourcecode[```bash
+Rename-Computer -NewName "WinCLI1"
+
+# Netzwerkkonfiguration
+Get-NetAdapter Ethernet0 | Rename-NetAdapter -NewName "LAN"
+
+# Firewallregeln setzen
+Set-NetFirewallRule -Name "FPS-ICMP4-ERQ-In" -Enabled True -Profile Domain,Private,Public
+Set-NetFirewallRule -Name "FPS-ICMP4-ERQ-Out" -Enabled True -Profile Domain,Private,Public
+
+# Zeitzone setzen
+Set-TimeZone -Id "W. Europe Standard Time"
+
+Restart-Computer
+```]
+
+*AvengerHQ.at beitreten*
+
+#sourcecode[```bash
+Add-Computer -DomainName AvengerHQ.at -Credential (Get-Credential) -Restart
+```]
+
+=== WinCLI2
+
+*Grundkonfiguration*
+
+#sourcecode[```bash
+Rename-Computer -NewName "WinCLI2"
+
+# Netzwerkkonfiguration
+Get-NetAdapter Ethernet0 | Rename-NetAdapter -NewName "LAN"
+
+# Firewallregeln setzen
+Set-NetFirewallRule -Name "FPS-ICMP4-ERQ-In" -Enabled True -Profile Domain,Private,Public
+Set-NetFirewallRule -Name "FPS-ICMP4-ERQ-Out" -Enabled True -Profile Domain,Private,Public
+
+# Zeitzone setzen
+Set-TimeZone -Id "W. Europe Standard Time"
+
+Restart-Computer
+```]
+
+*AvengerHQ.at beitreten*
+
+#sourcecode[```bash
+Add-Computer -DomainName "AvengerHQ.at" -Credential (Get-Credential) -Restart
+```]
+
 === DC3
 
-==== Grundkonfiguration
+*Grundkonfiguration*
 
 #sourcecode[```bash
 Rename-Computer -NewName "DC3"
@@ -82,7 +134,7 @@ Set-TimeZone -Id "W. Europe Standard Time"
 Restart-Computer
 ```]
 
-==== Child Domäne Wakanda.AvengerHQ.at erstellen
+*Child Domäne Wakanda.AvengerHQ.at erstellen*
 
 #sourcecode[```bash
 # Features installieren
@@ -98,7 +150,7 @@ Set-DnsClientServerAddress -InterfaceAlias "Wakanda" -ServerAddresses ("10.10.0.
 
 === DC4
 
-==== Grundkonfiguration
+*Grundkonfiguration*
 
 #sourcecode[```bash
 Rename-Computer -NewName "DC4"
@@ -114,7 +166,7 @@ Set-TimeZone -Id "W. Europe Standard Time"
 Restart-Computer
 ```]
 
-==== Wakanda.AvengerHQ.at beitreten
+*Wakanda.AvengerHQ.at beitreten*
 
 #sourcecode[```bash
 # Features installieren
@@ -130,7 +182,7 @@ Set-DnsClientServerAddress -InterfaceAlias "Wakanda" -ServerAddresses ("10.10.0.
 
 === RODC
 
-==== Grundkonfiguration
+*Grundkonfiguration*
 
 #sourcecode[```bash
 Rename-Computer -NewName "RODC"
@@ -146,7 +198,7 @@ Set-TimeZone -Id "W. Europe Standard Time"
 Restart-Computer
 ```]
 
-==== RODC hochstufen und AvengerHQ.at beitreten
+*RODC hochstufen und AvengerHQ.at beitreten*
 
 #sourcecode[```bash
 # Features installieren
