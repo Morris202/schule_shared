@@ -1,29 +1,20 @@
 #import "@preview/document:0.1.0": *
-#show: doc => conf(
-  doc,
-  title: [Credentials Protection],
-  subtitle: none,
-  authors: ("Morris Tichy, Lukas Freudensprung",),
-  fach: "NWTK",
-  thema: "Little Big Topo",
-  create-outline: true,
-  enumerate: true,
-)
+#import "@preview/codelst:2.0.2": sourcecode
 
-= Credential Guard
+=== Credential Guard
 
 Der Credential Guard verhindert Identitätsdiebstahl, durch das absichern und schützen von den 
 - NTLM Passwort Hashes,
 - dem Kerberos Ticket Granting Tickets (TGTs) und
 - den gespeicherten Credentials von Applikationen als Domain Credentials.
 
-== Nutzen/Vorteil
+==== Nutzen/Vorteil
 
 - hardware security
 - virtualization-based security
 - protection against advanced persistant threats
 
-== Requirements
+==== Requirements
 
 Folgende Einstellungen sind essenziell:
 - Virtualization-based security (VBS)
@@ -43,11 +34,11 @@ Folgende Einstellungen sind empfehlenswert:
 - Trusted Platform Module (TPM)
 - UEFI lock
 
-== Wichtig!
+==== Wichtig!
 
 Credential Guard hat bei Domänen Controllern (DCs) ist nicht empfohlen zu aktivieren, da er keine erweiterte Security hinzufügt. Das aktivieren kann zu Problemen mit Applikationskompatibilität führen.
 
-== Default Enablement
+==== Default Enablement
 
 Windows 11 (22H2) und Windows Server 2025 oder später sollten die Credential Guard bei folgenden Bedingungen standardmäßig aktiviert sein.
 
@@ -63,7 +54,7 @@ Windows Server 2025
 - Mitglied einer Domäne
 - Kein Domänen Controller
 
-== GPO Konfiguration
+==== GPO Konfiguration
 
 - Local Group Policy Editor öffnen (oder für meherer Geräte eine GPO erstellen)
 - Pfad folgen
@@ -78,22 +69,20 @@ Windows Server 2025
   caption: [Credential Guard GPO],
 )
 
-== Überprüfung
+==== Überprüfung
 
-=== System Information
-
+*System Information*\
 - Start
 - msinfo32.exe eingeben
 - System Information auswählen
 - System Summary auswählen
 - überprüfen ob der Credential Guard neben der Virtualization-based Security Services Running angezeigt wird
 
-=== PowerShell
-
+*PowerShell*\
 Folgenden Command in der PowerShell eingeben:
-```bash
+#sourcecode[```bash
 (Get-CimInstance -ClassName "Win32_DeviceGuard" -Namespace "root\Microsoft\Windows\DeviceGuard").SecurityServicesRunning
-```
+```]
 - 0: Credential Guard disabled
 - 1: Credential Gurad enabled/running
 
@@ -102,16 +91,16 @@ Folgenden Command in der PowerShell eingeben:
   caption: [Credential Guard Überprüfung],
 )
 
-= Protected Users Security Group
+=== Protected Users Security Group
 
 Die Global Group Protect Users wurde zum Schutz vor Diebstahl von Anmeldeinformationen entwickelt. Die Gruppe löst nicht konfigurierbaren Schutz auf Geräten und Hostcomputern aus, um zu verhindern, dass Anmeldeinformationen bei der Anmeldung von Gruppenmitgliedern zwischengespeichert werden.
 
-== Wichtig!
+==== Wichtig!
 
 Niemals Konten für Dienst (zB. NT AUTHORITY\\SYSTEM, NT AUTHORITY\\NETWORK SERVICE) und Computer (Jeder Computer der Domäne beitritt zB. Kontoname PC-01\$) hinzufügen, da für diese Konten die Mitgliedschaft keinen lokalen Schutz bietet. Kennwort und Zertifikat sind immer auf dem Host verfügbar.\
 Mitglieder von Gruppen mit hoher Berechtigung (Enterprise Admins & Domain Admins) nicht hinzufügen, bis man sicher ist das das Hinzufügen keine negativen Konsiquenzen hat.
 
-== Requirements
+==== Requirements
 
 Hosts Betriebsystem:
 - Windows 8.1 or later
@@ -122,14 +111,14 @@ Domain functional Level:
 
 Mitglieder der Protected User Group müssen AES Authentifikation unterstützen
 
-== Device Protection für Protected Users
+==== Device Protection für Protected Users
   
 - Keine Speicherung von Klartext-Anmeldedaten bei Credential Delegation (CredSSP), Windows Digest, NTLMund Kerberos.
 - Kerberos erzeugt keine DES- oder RC4-Schlüssel.
 - Kein Offline-Login, da das System keinen zwischengespeicherten Verifier erstellt.
 - Schutzmechanismen greifen erst nach der nächsten Anmeldung des Nutzers.
 
-== Domain Controller Protection für Protected Users
+==== Domain Controller Protection für Protected Users
 
 - Keine NTLM-Authentifizierung möglich.
 - Kerberos erlaubt nur moderne Verschlüsselungen, keine DES oder RC4.
@@ -137,10 +126,9 @@ Mitglieder der Protected User Group müssen AES Authentifikation unterstützen
 - Kerberos-Tickets (TGTs) können nicht über vier Stunden hinaus verlängert werden.
 - Ticket-Lebensdauer ist fest auf 600 Minuten gesetzt und kann nur durch Verlassen der Gruppe geändert werden.
 
-== Konfiguration
+==== Konfiguration
 
-=== Active Directory Users and Computers
-
+*Active Directory Users and Computers*\
 - Zu folgendem Pfad wechseln:\
   Server Manager -> Tools -> Active Directory Users and Computers -> Folder Users
 - den User auswählen und zu der Gruppe Protected Users hinzufügen
@@ -150,9 +138,8 @@ Mitglieder der Protected User Group müssen AES Authentifikation unterstützen
   caption: [Protected Users Überprüfung],
 )
 
-=== PowerShell
-
-folgenden Befehl in der PowerShell ausführen
-```bash
+*PowerShell*
+folgenden Befehl in der PowerShell ausführen:
+#sourcecode[```bash
 Add-ADGroupMember -Identity "Protected Users" -Members "USERNAME"
-```
+```]

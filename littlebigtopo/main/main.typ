@@ -23,6 +23,8 @@
 #include "Firewalls/NPS_FG_CP/nps.typ"
 = Active Directory
 
+== Hardening
+
 #include "AD/Advanced Security Audit Policies/Advanced_Security_Audit_Policies.typ"
 #include "AD/Credentials Protection/Credentials_Protection.typ"
 #include "AD/GPOs/GPOs.typ"
