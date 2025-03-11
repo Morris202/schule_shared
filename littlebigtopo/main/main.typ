@@ -54,6 +54,10 @@
 
 #include "AD/IIS/iis.typ"
 
+== Certificate Authority
+
+#include "AD/Certificate Authority/CA.typ"
+
 == Hardening
 
 #include "AD/Hardening/GPOs/GPOs.typ"
