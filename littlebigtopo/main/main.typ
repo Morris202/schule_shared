@@ -13,11 +13,14 @@
 
 = ISP
 
+
 = Switching
 
 #include "Switching/Private VLANs/PVLANs.typ"
 
+
 = Firewalls
+
 #include "Firewalls/av_FortiGate/av_fortigate.typ"
 #include "Firewalls/dataleakprev/dataleakprev.typ"
 #include "Firewalls/ips/ips.typ"
@@ -27,11 +30,17 @@
 #include "Firewalls/vpn_psk/vpn_psk.typ"
 #include "Firewalls/NPS_FG_CP/nps.typ"
 #include "Firewalls/staticnat/staticnat.typ"
+
+
 = Active Directory
 
-== ADDS
+==  Active Directory Directory Services
 
 #include "AD/ADDS/ADDS.typ"
+
+== Active Directory Sites und Site-Links
+
+#include "AD/Sites/Sites.typ"
 
 == Hardening
 
@@ -40,7 +49,9 @@
 #include "AD/Hardening/Windows Security Baseline/Windows_Security_Baseline.typ"
 #include "AD/Hardening/Advanced Security Audit Policies/Advanced_Security_Audit_Policies.typ"
 
+
 = Linux
+
 #include "Linux/bind9/bind9.typ"
 #include "Linux/Metasploit/metasploit.typ"
 #include "Linux/prometheus_grafana/prometheus-grafan.typ"
