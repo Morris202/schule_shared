@@ -42,6 +42,10 @@
 
 #include "AD/Sites/Sites.typ"
 
+== Active Directory Users und Computers
+
+#include "AD/Users_Computers/Users_Computers.typ"
+
 == Hardening
 
 #include "AD/Hardening/GPOs/GPOs.typ"
