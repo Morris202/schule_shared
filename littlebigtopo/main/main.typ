@@ -50,6 +50,10 @@
 
 #include "AD/DFS/dfs.typ"
 
+== IIS
+
+#include "AD/IIS/iis.typ"
+
 == Hardening
 
 #include "AD/Hardening/GPOs/GPOs.typ"
