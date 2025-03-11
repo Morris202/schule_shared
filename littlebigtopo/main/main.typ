@@ -38,7 +38,7 @@
 
 #include "AD/ADDS/ADDS.typ"
 
-== Active Directory Sites und Site-Links
+== Active Directory Sites und Services
 
 #include "AD/Sites/Sites.typ"
 
