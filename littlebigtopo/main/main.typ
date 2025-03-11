@@ -46,6 +46,10 @@
 
 #include "AD/Users_Computers/Users_Computers.typ"
 
+== Distributed File System
+
+#include "AD/DFS/dfs.typ"
+
 == Hardening
 
 #include "AD/Hardening/GPOs/GPOs.typ"
