@@ -1,6 +1,6 @@
 #import "@preview/codelst:2.0.2": sourcecode
 == ISP Overlay + Underlay
-Wie auch schon oben erwähnt wurde, wurde für die ISP-Topologie ein Overlay und ein Underlay erstellt. Das Overlay ist für die Verbindung zwischen den beiden ISP zuständig und das Underlay für die Verbindung zwischen den beiden Routers. Zwischen den Router wurde OSPF konfiguriert. Bei dem Overlay wurde BGP und MPLS konfiguriert.
+Wie auch schon oben erwähnt wurde, wurde für die ISP-Topologie ein Overlay und ein Underlay erstellt. Das Overlay ist für die Verbindung innerhalb des ISPs zuständig und das Underlay für die Verbindung zwischen den beiden Routers. Zwischen den Router wurde OSPF konfiguriert. Bei dem Overlay wurde BGP und MPLS konfiguriert.
 
 === Underlay
 Um eine Verbindung zwischen den zwei Router aufzubauen wird OSPF verwendet. Folgender Codeabschnitt zeigt diese Konfiguration.
@@ -9,8 +9,8 @@ Um eine Verbindung zwischen den zwei Router aufzubauen wird OSPF verwendet. Folg
 #sourcecode[```bash
 router ospf 30
 router-id 10.0.3.14
-network 10.0.3.20 0.0.0.3 area 30
-network 10.0.3.12 0.0.0.3 area 30
+network 10.0.3.14 0.0.0.3 area 30
+network 10.0.3.10 0.0.0.3 area 30
 exit
 ```]
 *R2*
@@ -22,7 +22,7 @@ network 10.0.3.12 0.0.0.3 area 30
 exit
 ```]
 === Overlay
-Um eine Verbindung zwischen den zwei ISP aufzubauen wird eBGP verwendet. Folgender Codeabschnitt zeigt diese Konfiguration. 
+Um eine Verbindung innerhalb den zwei ISP aufzubauen wird eBGP verwendet. Folgender Codeabschnitt zeigt diese Konfiguration. 
 
 *R1*
 #sourcecode[```bash
