@@ -35,3 +35,6 @@ Für Testzwecke sind der VPC VPNC1 und der Windows-Client RSPAN-CLI integriert.
 Der ISP besteht aus den Standorten Stark Tower, Bifröst und S.H.I.E.L.D.. Als Underlay kommt OSPF zum Einsatz, während für die interne Adjazenzbildung iBGP verwendet wird. Zur Anbindung der ISPs untereinander dient eBGP.
 
 Als Overlay wurde MPLS implementiert. Zusätzlich wurde am ISP Stark Tower ein Hub-and-Spoke-FlexVPN eingerichtet, um den Datenverkehr zu verschlüsseln.
+
+== VPN Verbindungen
+
