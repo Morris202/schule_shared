@@ -1,6 +1,6 @@
 #import "@preview/codelst:2.0.2": sourcecode
 == ISP Overlay + Underlay
-Wie auch schon oben erwähnt wurde, wurde für die ISP-Topologie ein Overlay und ein Underlay erstellt. Das Overlay ist für die Verbindung innerhalb des ISPs zuständig und das Underlay für die Verbindung zwischen den beiden Routers. Zwischen den Router wurde OSPF konfiguriert. Bei dem Overlay wurde MPLS konfiguriert.
+Wie auch schon oben erwähnt wurde, wurde für die ISP-Topologie ein Overlay und ein Underlay erstellt. Genaueres zu den beiden Begriffen wird im Folgenden erklärt.
 
 === Underlay
 Das physische oder grundlegende Netzwerk (z. B. Router, Switches, Glasfaserleitungen), das Daten transportiert. In unserem Fall wurde OSPF konfiguriert.
