@@ -21,7 +21,7 @@
 = Switching
 
 #include "Switching/Private VLANs/PVLANs.typ"
-
+#include "Switching/rspan/rspan.typ"
 
 = Firewalls
 
@@ -34,7 +34,7 @@
 #include "Firewalls/vpn_psk/vpn_psk.typ"
 #include "Firewalls/NPS_FG_CP/nps.typ"
 #include "Firewalls/staticnat/staticnat.typ"
-
+#include "Firewalls/pfsense/pfsense.typ"
 
 = Active Directory
 
@@ -78,3 +78,4 @@
 #include "Linux/wireguard/wireguard.typ"
 #include "Linux/syslog/syslog.typ"
 #include "Linux/LinuxFW/linuxfw.typ"
+#include "Linux/Apparmor/Apparmor.typ"
