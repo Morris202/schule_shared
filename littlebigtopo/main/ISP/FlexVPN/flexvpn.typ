@@ -3,14 +3,14 @@
 
 == Hub-and-Spoke FlexVPN
 
+Die FlexVPN-Technologie nutzt IKEv2 zur sicheren Verbindung zwischen den Routern. Dabei wird auf dem Hub-Router ein dynamisches Virtual Tunnel Interface (dVTI) und auf den Spoke-Routern ein statisches VTI verwendet.
+
+=== Konfiguration
+
 Im Stark Tower wurde eine Hub-and-Spoke FlexVPN-Architektur implementiert, bei der der Hub-Router über FlexVPN mit drei Spoke-Routern verbunden ist. Zwischen dem Hub und den Spokes befindet sich der Backbone-Router ST-BB1.
 
 - Hub-Router: ST-BR1
 - Spoke-Router: ST-BR2 (Spoke 1), ST-BR3 (Spoke 2), ST-BR4 (Spoke 3)
-
-=== Konfiguration
-
-Die FlexVPN-Technologie nutzt IKEv2 zur sicheren Verbindung zwischen den Routern. Dabei wird auf dem Hub-Router ein dynamisches Virtual Tunnel Interface (dVTI) und auf den Spoke-Routern ein statisches VTI verwendet.
 
 *Hub*
 #sourcecode[```

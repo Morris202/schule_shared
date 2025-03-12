@@ -1,11 +1,12 @@
 #import "@preview/codelst:2.0.2": sourcecode
+
 == ISP Overlay + Underlay
 Wie auch schon oben erwähnt wurde, wurde für die ISP-Topologie ein Overlay und ein Underlay erstellt. Genaueres zu den beiden Begriffen wird im Folgenden erklärt.
 
 === Underlay
-Das physische oder grundlegende Netzwerk (z. B. Router, Switches, Glasfaserleitungen), das Daten transportiert. In unserem Fall wurde OSPF konfiguriert.
+Das physische oder grundlegende Netzwerk (z.B. Router, Switches), das Daten transportiert. In unserem Fall wurde OSPF konfiguriert.
 
-*R1*
+*ISP-Router*
 #sourcecode[```bash
 router ospf 30
 router-id 10.0.3.14
@@ -13,11 +14,13 @@ network 10.0.3.12 0.0.0.3 area 30
 network 10.0.3.8 0.0.0.3 area 30
 exit
 ```]
+
 === Overlay
 Ein virtuelles Netzwerk, das auf dem Underlay-Netzwerk aufbaut und zusätzliche Funktionen wie VPNs oder SD-WAN ermöglicht. In unserem Fall wurde MPLS konfiguriert.
 
-*R1*
+*ISP-Router*
 #sourcecode[```bash
+ip cef
 mpls ip 
 ```]
 
@@ -27,13 +30,11 @@ mpls ip
   caption: [MPLS Forward-Table],
 )
 
-
-
 === BGP
 BGP ist ein Routing-Protokoll, das für den Austausch von Routing-Informationen zwischen verschiedenen Autonomen Systemen (AS) verwendet wird.
-Zwischen den ISP wurde BGP konfiguriert. Folgender Codeabschnitt zeigt diese Konfiguration.
+Im und zwischen den ISP wurde BGP konfiguriert. Folgender Codeabschnitt zeigt diese Konfiguration.
 
-*R1*
+*ISP-Router*
 #sourcecode[```bash 
 router BGP 2
 network 209.123.6.0 m 255.255.255.0
@@ -51,6 +52,7 @@ exit
 ```]
 
 === Überprüfung
+
 Mithilfe von *sh ip bgp sum* kann überprüft werden, ob die Verbindung zwischen den zwei ISP aufgebaut wurde.
 #figure(
   image("bgproute.png", width: 80%),
