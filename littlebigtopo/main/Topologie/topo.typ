@@ -29,3 +29,9 @@ NewYork ist der zentrale Linux-Standort und wird durch eine *Linux-Firewall* mit
 Die Hawkeye Farm ist ein rein Cisco-proprietärer Standort und verfügt über eine redundante Firewall, die mittels IP SLA und HSRP abgesichert ist. Der Standort umfasst ein komplexes Switching, das folgende Funktionen integriert: VLANs, VTP, RSTP, EtherChannel sowie Sicherheitsmaßnahmen wie Port-Security, verschiedene Guards und ein gehärtetes PVST+.
 
 Für Testzwecke sind der VPC VPNC1 und der Windows-Client RSPAN-CLI integriert.
+
+== Stark Tower, Bifröst und S.H.I.E.L.D
+
+Der ISP besteht aus den Standorten Stark Tower, Bifröst und S.H.I.E.L.D.. Als Underlay kommt OSPF zum Einsatz, während für die interne Adjazenzbildung iBGP verwendet wird. Zur Anbindung der ISPs untereinander dient eBGP.
+
+Als Overlay wurde MPLS implementiert. Zusätzlich wurde am ISP Stark Tower ein Hub-and-Spoke-FlexVPN eingerichtet, um den Datenverkehr zu verschlüsseln.
