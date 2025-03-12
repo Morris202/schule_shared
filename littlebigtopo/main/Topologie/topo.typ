@@ -10,11 +10,11 @@ Unsere Topologie besteht aus den drei ISPs: Start Tower, Bifröst und S.H.I.E.L.
 
 == Avenger-HQ
 
-Avenger-HQ ist der zentrale Windows-Standort mit der Forest-Root-Domäne AvengerHQ.at und wird durch ein redundantes *FortiGate-HA-Cluster* abgesichert. Er umfasst unter anderem die beiden Domänencontroller *DC1* und *DC2* sowie einen *DFS- und Bind9-Server*. Zudem gibt es eine *1-Tier-PKI* mit einem *IIS-Webserver*, der über ein Webserver-Zertifikat HTTPS bereitstellt. Für Testzwecke sind die Windows-Clients *WinCLI1* und *WinCLI2* integriert.
+Avenger-HQ ist der zentrale Windows-Standort mit der Forest-Root-Domäne AvengerHQ.at und wird durch einen redundanten *FortiGate-HA-Cluster* abgesichert. Er umfasst unter anderem die beiden Domänencontroller *DC1* und *DC2* sowie einen *DFS- und Bind9-Server*. Zudem gibt es eine *1-Tier-PKI* mit einem *IIS-Webserver*, der über ein Webserver-Zertifikat HTTPS bereitstellt. Außerdem wurde ein *NPS*, für die Internetzugriffseinschränkung, eingerichtet. Für Testzwecke sind die Windows-Clients *WinCLI1* und *WinCLI2* integriert.
 
 == Wakanda
 
-Wakanda ist der zweite Windows-Standort und beherbergt die Subdomäne Wakanda.AvengerHQ.at. Der Standort wird durch eine *FortiGate-Firewall* abgesichert und umfasst die beiden Domänencontroller *DC3* und *DC4* sowie den Windows-Client *WinCLI3*.
+Wakanda ist der zweite Windows-Standort und hat die Subdomäne Wakanda.AvengerHQ.at. Der Standort wird durch eine *FortiGate-Firewall* abgesichert und umfasst die beiden Domänencontroller *DC3* und *DC4* sowie die beiden Clients *WinCLI3* und *LinCLI1*.
 
 == Sanctum Sanctorum
 
@@ -22,7 +22,7 @@ Sanctum Sanctorum ist ein sicherheitskritischer Standort mit minimaler Infrastru
 
 == NewYork
 
-NewYork ist der zentrale Linux-Standort und wird durch eine *Linux-Firewall* mit IPTables abgesichert. Der Standort umfasst unter anderem den Monitoring-Server *Prometheus/Grafana* sowie den Ubuntu Client *LinCLI1* zur Datenüberwachung.
+NewYork ist der zentrale Linux-Standort und wird durch eine *Linux-Firewall* mit IPTables abgesichert. Der Standort umfasst unter anderem den Monitoring-Server *Prometheus/Grafana* sowie einen *NTP- und TFTP Server*. Der Ubuntu Client *LinCLI1* wird zur Datenüberwachung von Prometheus und Grafana verwendet.
 
 == Hawkeye Farm
 
