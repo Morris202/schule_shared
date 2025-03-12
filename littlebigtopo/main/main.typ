@@ -17,10 +17,13 @@
 
 
 = ISP
+
 #include "ISP/over+under/over+under.typ"
 #include "ISP/pfadmani/bgp_path.typ"
 #include "ISP/destlist/destlist.typ"
 #include "ISP/bogons/bogons.typ"
+#include "ISP/FlexVPN/flexvpn.typ"
+
 
 = Switching
 
