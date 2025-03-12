@@ -15,16 +15,20 @@
 
 #include "Topologie/topo.typ"
 
+
 = ISP
 #include "ISP/over+under/over+under.typ"
 #include "ISP/pfadmani/bgp_path.typ"
 #include "ISP/destlist/destlist.typ"
+#include "ISP/bogons/bogons.typ"
 
 = Switching
 
 #include "Switching/Private VLANs/PVLANs.typ"
 #include "Switching/rspan/rspan.typ"
 #include "Switching/spanningtre/spanningtree.typ"
+
+
 = Firewalls
 
 #include "Firewalls/av_FortiGate/av_fortigate.typ"
@@ -37,6 +41,7 @@
 #include "Firewalls/NPS_FG_CP/nps.typ"
 #include "Firewalls/staticnat/staticnat.typ"
 #include "Firewalls/pfsense/pfsense.typ"
+
 
 = Active Directory
 
