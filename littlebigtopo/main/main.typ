@@ -16,13 +16,14 @@
 #include "Topologie/topo.typ"
 
 = ISP
-
+#include "ISP/pfadmani/bgp_path.typ"
+#include "ISP/destlist/destlist.typ"
 
 = Switching
 
 #include "Switching/Private VLANs/PVLANs.typ"
 #include "Switching/rspan/rspan.typ"
-
+#include "Switching/spanningtre/spanningtree.typ"
 = Firewalls
 
 #include "Firewalls/av_FortiGate/av_fortigate.typ"
