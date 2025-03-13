@@ -94,7 +94,7 @@ Damit ein High Availability Cluster konfiguriert werden kann, müssen folgende V
 Bei zwei Proxmoxservern gibt es ein Problem, da durch die Mastersuche eine Schleife entsteht und deshalb, bei 2 Servern, nie ein Master ausgewählt werden kann. Deshalb müssen wir 3 Proxmoxserver verwenden.
 
 === Erstellen eines Clusters
-*Auf dem Proxmox-ve1:*
+*Auf Proxmox-ve1:*
 
 Wir unter *Cluster > Create Cluster* ein neuer Cluster erstellt. 
 
@@ -117,7 +117,7 @@ Unter dem erstellten Cluster wird *Join Information* ausgewählt und der *Join T
   caption: [Auf dem Proxmox-ve1: Join Information]
 )
 \
-*Auf dem Proxmox-ve2:*
+*Auf Proxmox-ve2:*
 
 Unter *Cluster > Join Cluster* wird der *Join Token* und das Root Password von Proxmox-ve1 eingetragen.
 
@@ -126,7 +126,7 @@ Unter *Cluster > Join Cluster* wird der *Join Token* und das Root Password von P
   caption: [Auf dem Proxmox-ve2: Cluster beitreten]
 )
 
-*Auf dem Proxmox-ve3:*
+*Auf Proxmox-ve3:*
 
 Der Proxmox-ve3 wird ebenfalls dem Cluster beigetreten und der obige Schritt wiederholt.
 
@@ -139,6 +139,44 @@ Nachdem alle Proxmox-Server dem Cluster beigetreten sind, kann unter *Proxmox-ve
 )
 
 === Konfiguration des Zettabyte File System (ZFS)
+*Auf Proxmox-ve1*
+
+Unter *Disks* wird geschaut ob die Disks zuerst vorhanden sind und danach auf *ZFS* gewechselt. 
+
+#figure(
+  image("figures/zfs.png", width: 80%),
+  caption: [Proxmox-ve1: Disks verwalten]
+)
+
+Unter *ZFS > Create ZFS* wird ein neues ZFS erstellt. Es wird ein Name festgelegt, als Raid-Level *Mirror* und die Disks ausgewählt.
+
+#figure(
+  image("figures/zfs2.png", width: 80%),
+  caption: [Proxmox-ve1: ZFS erstellen]
+)
+
+Anschließend wird die erstellte ZFS angezeigt. 
+
+*Auf Proxmox-ve2 & Proxmox-ve3*
+
+Werden die gleichen Schritte wie auf Proxmox-ve1 durchgeführt. Es ist wichtig dabei zu beachten, dass der Name gleich ist und das Hackerl bei Add-Storage nicht ausgewählt ist. 
+
+#figure(
+  image("figures/zfs3.png", width: 80%),
+  caption: [Proxmox-ve2 & Proxmox-ve3: ZFS erstellen]
+)
+
+*Unter DataCenter > Storage > Edit ZFS* werden die verschiedenen Nodes miteinander verbunden.
+
+#figure(
+  image("figures/zfs4.png", width: 80%),
+  caption: [HA-Cluster bilden]
+)
+
+
+
+
+
 
 
 
