@@ -85,3 +85,10 @@ einen Brute Force Angriff auf die FortiGate durchführen.
   caption: [Brute Force Angriff auf FortiGate]
 )
 Der Screenshot zeigt, dass der Brute Force Angriff erfolgreich war und das Passwort *admin* war.
+
+In der FortiGate sehen wir unter *Logs & Reports > Security Events* die fehlgeschlagenen Anmeldeversuche. 
+
+#figure(
+  image("logs.png", width: 100%),
+  caption: [Brute Force Log in FortiGate]
+)
