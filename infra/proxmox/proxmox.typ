@@ -173,6 +173,36 @@ Werden die gleichen Schritte wie auf Proxmox-ve1 durchgeführt. Es ist wichtig d
   caption: [HA-Cluster bilden]
 )
 
+== Überprüfung
+Nachdem der Cluster erstellt worden ist, ist es an der Zeit den Cluster zu testen und zu überprüfen, ob alles richtig funktioniert. Wir gehen dazu in die VM Einstellungen und trennen die Netzwerkverbindung.
+
+#figure(
+  image("figures/clustercheck.png", width: 68%),
+  caption: [Cluster Überprüfung]
+)
+
+Wie man jezt sehen kann, wird auf dem Promox-ve2, auf dem Ubuntu läuft ein Ausfall erkannt. 
+
+#figure(
+  image("figures/clustercheck2.png", width: 68%),
+  caption: [Cluster Überprüfung]
+)
+
+Damit wir bemerken, wann der Cluster umschalten, führen wir dazu einfach einen Ping auf die IP-Adresse des Ubuntu-Servers aus.
+
+#sourcecode(```bash
+  ping -t 192.168.178.117 # IP-Adresse des Servers
+```)
+
+Nach 2:30 Minuten wird der Cluster umgeschalten und der Ping wird wieder erfolgreich. Dies ist in der nachfolgenden Grafik zu erkennen. 
+
+#figure(
+  image("figures/clustercheck3.png", width: 100%),
+  caption: [Cluster Überprüfung]
+)
+
+
+
 
 
 
