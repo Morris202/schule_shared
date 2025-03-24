@@ -128,7 +128,7 @@ Unter *Cluster > Join Cluster* wird der *Join Token* und das Root Password von P
 
 *Auf Proxmox-ve3:*
 
-Der Proxmox-ve3 wird ebenfalls dem Cluster beigetreten und der obige Schritt wiederholt.
+Auf dem Proxmox-ve3 wird ebenfalls dem Cluster beigetreten und der obige Schritt wiederholt.
 
 ==== Überprüfung
 Nachdem alle Proxmox-Server dem Cluster beigetreten sind, kann unter *Proxmox-ve1* überprüft werden, ob alle Server verbunden sind.
@@ -173,12 +173,55 @@ Werden die gleichen Schritte wie auf Proxmox-ve1 durchgeführt. Es ist wichtig d
   caption: [HA-Cluster bilden]
 )
 
+=== Ubuntu Server hinzufügen
+Auf dem Cluster wird ein neuer Ubuntu Server hinzugefügt. 
+
+Dafür müssen wir zuerst auf der Offiziellen Ubuntu-Website die ISO heruntergeladen.  #link("https://ubuntu.com/download/server/thank-you?version=24.04.2&architecture=amd64&lts=true")[
+  hier
+]. Das iso Image wird auf den Proxmox-Server hochgeladen.
+#figure( 
+  image("figures/ubuntu.png", width: 80%),
+  caption: [Ubuntu Server hinzufügen]
+)
+Unter *DataCenter > Proxmox-ve-01 > Create VM* wird eine neue VM erstellt.
+
+#figure( 
+  image("figures/ubuntu2.png", width: 50%),
+  caption: [VM erstellen]
+)
+
+Unter *OS* wird das zuvor heruntergeladene Ubuntu-ISO ausgewählt. 
 
 
+#figure( 
+  image("figures/ubuntu3.png", width: 70%),
+  caption: [ISO auswählen]
+)
 
+Anschließend kann die VM gestartet werden.
 
+#figure( 
+  image("figures/ubuntu4.png", width: 70%),
+  caption: [VM starten]
+)
 
+Damit das umschalten der VMs funktioniert muss auf der VM ein Replication Job erstellt werden.
 
+#figure( 
+  image("figures/replicationjob.png", width: 70%),
+  caption: [Replication Job erstellen]
+)
 
+Danach muss auf *Schedule Now* gedrückt werden.
 
+Bei *DataCenter > HA* müssen die Maschinen ausgewählt werden. 
 
+#figure( 
+  image("figures/ha.png", width: 70%),
+  caption: [HA auswählen 1]
+)
+
+#figure( 
+  image("figures/ha2.png", width: 70%),
+  caption: [HA auswählen 2]
+)
