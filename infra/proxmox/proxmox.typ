@@ -128,7 +128,7 @@ Unter *Cluster > Join Cluster* wird der *Join Token* und das Root Password von P
 
 *Auf Proxmox-ve3:*
 
-Auf dem Proxmox-ve3 wird ebenfalls dem Cluster beigetreten und der obige Schritt wiederholt.
+Der Proxmox-ve3 wird ebenfalls dem Cluster beigetreten und der obige Schritt wiederholt.
 
 ==== Überprüfung
 Nachdem alle Proxmox-Server dem Cluster beigetreten sind, kann unter *Proxmox-ve1* überprüft werden, ob alle Server verbunden sind.
@@ -173,55 +173,30 @@ Werden die gleichen Schritte wie auf Proxmox-ve1 durchgeführt. Es ist wichtig d
   caption: [HA-Cluster bilden]
 )
 
-=== Ubuntu Server hinzufügen
-Auf dem Cluster wird ein neuer Ubuntu Server hinzugefügt. 
+== Überprüfung
+Nachdem der Cluster erstellt worden ist, ist es an der Zeit den Cluster zu testen und zu überprüfen, ob alles richtig funktioniert. Wir gehen dazu in die VM Einstellungen und trennen die Netzwerkverbindung.
 
-Dafür müssen wir zuerst auf der Offiziellen Ubuntu-Website die ISO heruntergeladen.  #link("https://ubuntu.com/download/server/thank-you?version=24.04.2&architecture=amd64&lts=true")[
-  hier
-]. Das iso Image wird auf den Proxmox-Server hochgeladen.
-#figure( 
-  image("figures/ubuntu.png", width: 80%),
-  caption: [Ubuntu Server hinzufügen]
-)
-Unter *DataCenter > Proxmox-ve-01 > Create VM* wird eine neue VM erstellt.
-
-#figure( 
-  image("figures/ubuntu2.png", width: 50%),
-  caption: [VM erstellen]
+#figure(
+  image("figures/clustercheck.png", width: 68%),
+  caption: [Cluster Überprüfung]
 )
 
-Unter *OS* wird das zuvor heruntergeladene Ubuntu-ISO ausgewählt. 
+Wie man jezt sehen kann, wird auf dem Promox-ve2, auf dem Ubuntu läuft ein Ausfall erkannt. 
 
-
-#figure( 
-  image("figures/ubuntu3.png", width: 70%),
-  caption: [ISO auswählen]
+#figure(
+  image("figures/clustercheck2.png", width: 68%),
+  caption: [Cluster Überprüfung]
 )
 
-Anschließend kann die VM gestartet werden.
+Damit wir bemerken, wann der Cluster umschalten, führen wir dazu einfach einen Ping auf die IP-Adresse des Ubuntu-Servers aus.
 
-#figure( 
-  image("figures/ubuntu4.png", width: 70%),
-  caption: [VM starten]
-)
+#sourcecode(```bash
+  ping -t 192.168.178.117 # IP-Adresse des Servers
+```)
 
-Damit das umschalten der VMs funktioniert muss auf der VM ein Replication Job erstellt werden.
+Nach 2:30 Minuten wird der Cluster umgeschalten und der Ping wird wieder erfolgreich. Dies ist in der nachfolgenden Grafik zu erkennen. 
 
-#figure( 
-  image("figures/replicationjob.png", width: 70%),
-  caption: [Replication Job erstellen]
-)
-
-Danach muss auf *Schedule Now* gedrückt werden.
-
-Bei *DataCenter > HA* müssen die Maschinen ausgewählt werden. 
-
-#figure( 
-  image("figures/ha.png", width: 70%),
-  caption: [HA auswählen 1]
-)
-
-#figure( 
-  image("figures/ha2.png", width: 70%),
-  caption: [HA auswählen 2]
+#figure(
+  image("figures/clustercheck3.png", width: 100%),
+  caption: [Cluster Überprüfung]
 )
