@@ -200,15 +200,3 @@ Nach 2:30 Minuten wird der Cluster umgeschalten und der Ping wird wieder erfolgr
   image("figures/clustercheck3.png", width: 100%),
   caption: [Cluster Überprüfung]
 )
-
-
-
-
-
-
-
-
-
-
-
-
