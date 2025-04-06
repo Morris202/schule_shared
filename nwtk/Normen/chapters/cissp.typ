@@ -12,8 +12,8 @@ Kandidaten/Innen müssen mindestens 5 Jahre Berufserfahrung in mindestens 2 der 
 Die 8 Kompetenzbereiche der CISSP-Zertifizierung sind:
 
 + Sicherheit und Risikomanagement
-  - 
-  - 
+  - Verstehen und Anwenden von Sicherheitskonzepten
+  - Verstehen und Anwenden von Risikomanagementkonzepten
 + Asset Sicherheit
  - Assets und Informationsklassifizierung
  - Festlegen der Anforderungen für den Umgang mit Informationen und Assets
