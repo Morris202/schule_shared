@@ -12,8 +12,6 @@ Die ITIL (Information Technology Infrastructure Library) ist ein Best-Practice-L
 
 == ITIL v4
 ITIL 4 bringt neue Gedanken ein und entwickelt bestehende Inhalte von ITIL v3 weiter. ITIL 4 nennt zwei Schlüsselelemente:
- - Service Value System (SVS)
- - Modell der vier Dimensionen
 
 === Service Value System
 Das ITIL Service Value System (SVS) beschreibt, wie alle Komponenten und Aktivitäten einer Organisation zusammenwirken, um durch Services nachhaltigen Wert für Kunden und Stakeholder zu schaffen.
