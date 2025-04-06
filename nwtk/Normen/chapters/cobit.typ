@@ -31,6 +31,11 @@ Die Grundlagen von COBIT beruhen auf klar definierten Prinzipien, die den Rahmen
   - Führung: Anforderungen und Rahmenbedingungen leiten den Weg des Unternehmens
   - Verwaltung: Kümmert sich darum, dass die Richtung der Führung durch Unternehmensziele umgesetzt wird.
 
+#figure(
+  image("../figures/COBIT_Principles.jpg", width: 90%),
+  caption: [Die Prinzipien von COBIT 5 (neuste Version COBIT 2019)],
+)
+
 == Die Enabler von COBIT <enabler>
 
 Die sieben Enabler bieten einen ganzheitlichen Ansatz, um die IT-Governance effektiv zu gestalten und sicherzustellen, dass die IT die Geschäftsziele optimal unterstützt.
@@ -43,6 +48,11 @@ Die sieben Enabler bieten einen ganzheitlichen Ansatz, um die IT-Governance effe
 - *Services, Infrastruktur und Anwendungen*: Damit sind Technische Ressourcen gemeint. Sie ermöglichen die Bereitstellung von IT-Services. Eine gut entwickelte Infrastruktur gewährleistet Statbilität und Flexibilität.
 - *Mitarbeiter, Fähigkeiten und Kompetenzen*: Qualifikationen von Mitarbeitern sind entscheidend für die Umsetzungen von Strategien und Prozessen. Um die Qualifikation zu gewährleisten, eignen sich Weiterbildungen und die Anpassungsfähigkeit der Organisation. 
 
+
+#figure(
+  image("../figures/COBIT_Enablers.jpg", width: 90%),
+  caption: [Die Enabler von COBIT 5 (neuste Version COBIT 2019)],
+)
 
 == Versionen und Entwicklung von COBIT
 
