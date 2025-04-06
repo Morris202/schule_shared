@@ -56,7 +56,7 @@ Das Modell der vier Dimensionen beschreibt die zentralen Bereiche, die bei jeder
 )
 
 == Zertifizierungsprozess
-Der Zertifizirtungdprozess ist in 5 Phasen unterteilt und wird seit 2018 von PeopleCert geführt. Die Zertifizierung muss alle 3 Jahre erneuert werden und die Kosten für eine ITIL Master belaufen sich auf bis zu 12.000 US-Dollar in einem gesamt Paket (ITIL Foundation Prüfung ca. 150-400€ und mit Kurs 500-1500€).
+Der Zertifizierungsprozess ist in 5 Phasen unterteilt und wird seit 2018 von PeopleCert geführt. Die Zertifizierung muss alle 3 Jahre erneuert werden und die Kosten für eine ITIL Master belaufen sich auf bis zu 12.000 US-Dollar in einem gesamt Paket (ITIL Foundation Prüfung ca. 150-400€ und mit Kurs 500-1500€).
 
 #figure(
   image("../figures/ITIL_Zertifizierung.png", width: 100%),
