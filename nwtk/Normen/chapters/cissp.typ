@@ -1,6 +1,6 @@
 = CISSP
 
-Die Certified Information Seystem Security Professionmal ist eine Zertifizierung, die von der International Information Systems Security Certification Consortium (ISC)² angeboten wird. Sie gilt als einer der angesehensten Zertifizierungen auf dem Markt für Informationssicherheit. Die meisten Unternehmen verlangen oder bevorzugen diese Zertifizierung bei der Einstellung von Mitarbeiter/Innen.
+Die Certified Information System Security Professional ist eine Zertifizierung, die von der International Information Systems Security Certification Consortium (ISC)² angeboten wird. Sie gilt als einer der angesehensten Zertifizierungen auf dem Markt für Informationssicherheit. Die meisten Unternehmen verlangen oder bevorzugen diese Zertifizierung bei der Einstellung von Mitarbeiter/Innen.
 
 Das breite Spektrum der Themen, die im CISSP-Wissenkorpus enthalten sind soll sicherstellen das Kandidaten/Innen in der Lage sind Risikominderungsstartegien zu entwickeln, Sicherheitsrichtlinien zu erstellen und Sicherheitslösungen zu implementieren.
 
@@ -12,6 +12,8 @@ Kandidaten/Innen müssen mindestens 5 Jahre Berufserfahrung in mindestens 2 der 
 Die 8 Kompetenzbereiche der CISSP-Zertifizierung sind:
 
 + Sicherheit und Risikomanagement
+  - 
+  - 
 + Asset Sicherheit
  - Assets und Informationsklassifizierung
  - Festlegen der Anforderungen für den Umgang mit Informationen und Assets

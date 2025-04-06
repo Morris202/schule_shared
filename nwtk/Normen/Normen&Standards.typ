@@ -15,6 +15,7 @@
 #include "chapters/itil.typ"
 #include "chapters/nis.typ"
 #include "chapters/cissp.typ"
+#include "chapters/Audit.typ"
 #include "chapters/27001audit.typ"
 #include "chapters/itgrundschutz.typ"
 #include "chapters/quellen.typ"
