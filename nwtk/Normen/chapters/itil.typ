@@ -9,7 +9,6 @@ Die ITIL (Information Technology Infrastructure Library) ist ein Best-Practice-L
   caption: [Geschichte und Entwicklung der ITIL],
 )
 
-
 == ITIL v4
 ITIL 4 bringt neue Gedanken ein und entwickelt bestehende Inhalte von ITIL v3 weiter. ITIL 4 nennt zwei Schlüsselelemente:
 
