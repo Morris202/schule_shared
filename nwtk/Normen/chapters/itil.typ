@@ -1,5 +1,5 @@
 = ITIL
-Die ITIL (Information Technology Infrastructure Library) ist ein Best-Practice-Leitfaden und der De-facto-Standard im Bereich IT-Service-Management. Sie ist in folgenden Umfeld einzuordnen:
+Die ITIL (Information Technology Infrastructure Library) ist ein Best-Practice-Leitfaden und der De-facto-Standard im Bereich IT-Service-Management. Sie ist in folgendes Umfeld einzuordnen:
  - *Prozessmanagement:* Definition und Steuerung der Prozesse eines Unternehmens.
  - *IT-Service-Management:* Methoden, die nötig sind, um die bestmögliche Unterstützung von Geschäftsprozessen durch die IT-Organisation zu erreichen. (De-facto-Standard ist ITIL)
  - *Business Service Management:* Die Verbindung zwischen Prozessmanagement und ITSM. Es befasst sich mit den wirtschaftlichen Zusammenhängen von IT-Leistungen und Geschäftsprozessen im Unternehmen.
