@@ -1,6 +1,6 @@
 = IT-Audit
 
-IT-Audits werden von Unternehmen durchgeführt, um Sicherheitsrisiken in einem Unternehmen zu identifizieren und zu verstehen. Audits sind deshalb wichtig, weil Unternehmen viel Geld in Systeme ausgeben und um sicherzugehen, dass die Systeme und deren Outputs ordnungsgemäß funktionieren. Systeme zu inspizieren, Schadensmessungen und Reports zu Fußnissen zu erstellen, das ist Sinn und Zweck von IT-Audits.
+IT-Audits werden von Unternehmen durchgeführt, um Sicherheitsrisiken in einem Unternehmen zu identifizieren und zu verstehen. Audits sind deshalb wichtig, weil Unternehmen viel Geld in Systeme ausgeben und um sicherzugehen, dass die Systeme und deren Outputs ordnungsgemäß funktionieren. Systeme zu inspizieren, Schadensmessungen und Reports zu Fundnissen zu erstellen, das ist Sinn und Zweck von IT-Audits.
 
 IT-Auditer konzentrieren sich stark auf die Cybersicherheit, da Datenpannen und Cyberangriffe zunehmen. Sie prüfen dabei Zugangskontrollen, Netzwerkschutz und Reaktionspläne, um Schwachstellen zu finden.
 
