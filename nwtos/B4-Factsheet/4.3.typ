@@ -30,6 +30,16 @@ SMBv3, eingeführt mit Windows 8 und Windows Server 2012, erweitert dieses Proto
 
 == Advanced Auditing
 
+Advanced Auditing in Windows nutzt erweiterte Richtlinien (verfügbar ab Windows Vista/Server 2008), um gezielt festzulegen, welche sicherheitsrelevanten Ereignisse protokolliert werden – etwa Anmeldeversuche, Objektzugriffe oder Änderungen an Sicherheitsrichtlinien.
+
+Das ermöglicht Administratoren:
+
+- Präzisere Ereignisaufzeichnung: Sie können für einzelne Ereigniskategorien Erfolg, Fehler oder beides separat aktivieren.
+
+- Verbesserte Sicherheitsüberwachung: Ungewöhnliche oder verdächtige Aktivitäten lassen sich leichter erkennen und analysieren, was bei der Fehlersuche und Compliance hilft.
+
+- Reduzierung von unnötigen Logeinträgen: Nur die relevanten Ereignisse werden erfasst, was die Verwaltung und Auswertung der Protokolle erleichtert.
+
 == Checkliste
 
 - [ ] ADDS Domäne einrichten
