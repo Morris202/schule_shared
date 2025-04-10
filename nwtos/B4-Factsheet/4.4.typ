@@ -1,3 +1,6 @@
+#import "@preview/cheq:0.2.2": checklist
+#show: checklist
+
 = Remote Desktop Services
 
 Remote Desktop Services (RDS) ist eine Microsoft-Technologie zur zentralisierten Bereitstellung von Desktops und Anwendungen. Benutzer greifen über eine Remotesitzung auf Ressourcen zu, wodurch Hardwareanforderungen auf der Client-Seite sinken und zentrale Verwaltung möglich wird.
@@ -28,10 +31,27 @@ Remote Desktop Web Access (RDWeb)
   - Webinterface zur Bereitstellung von RemoteApps oder Desktops.
   - Benutzer melden sich per Browser an und sehen nur ihre Anwendungen.
 
-== Checklisten
+== Checkliste
 
-=== RDS Infrastruktur konfigurieren
+=== session-based RDS
 
-- [ ] alle benötigten Server hinzufügen (Server Manager)
 - [ ] Remote Desktop Service Feature installieren
-- [ ] RDSH-Server konfigurieren (z.B. Gruppenrichtlinien)
+- [ ] alle RDS Server im Installationsprozess auswählen
+- [ ] RD Licensing Server hinzufügen
+- [ ] RD Licensing Server konfigurieren
+- [ ] RDS-Gateway konfigurieren
+- [ ] Zertifikat-Template für RD Gateway & Connection Broker erstellen (auf CA)
+- [ ] Zertifikate für RD Gateway & Connection Broker konfigurieren (auf RDCB-LS)
+- [ ] SSL-Zertifikat für WebAccess konfigurieren
+- [ ] RD Licensing konfigurieren
+- [ ] WebAccess HTTP redirect erstellen
+
+=== Session Collections
+
+- [ ] RDS Users & Groups erstellen
+- [ ] DFS Share für User Profiles erstellen (auf FileServer)
+- [ ] Session Collection erstellen (auf RDCB-LS)
+- [ ] Session Collection konfigurieren
+- [ ] Adresse des RD Gateway aufrufen und mit Credentials anmelden
+- [ ] File herunterladen
+- [ ] RDP Session starten
