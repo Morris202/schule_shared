@@ -38,7 +38,7 @@ Ein Ceph-Speichercluster besteht aus mehreren Daemon-Typen:
 === Pools
 Ein Pool ist eine Abstraktion, die entweder als „repliziert“ oder „erasure coded“ (also fehlerkorrigierend) ausgelegt werden kann. In Ceph wird die Methode des Datenschutzes auf Pool-Ebene festgelegt. Ceph bietet und unterstützt zwei Arten des Datenschutzes: Replikation und Erasure Coding. Objekte werden in Pools gespeichert. Ein Speicherpool ist eine Sammlung von Speichervolumen. Ein Speichervolumen ist die grundlegende Speichereinheit, beispielsweise zugewiesener Speicherplatz auf einer Festplatte oder eine einzelne Bandkassette. Der Server nutzt diese Speichervolumen, um gesicherte, archivierte oder platzverwaltete Dateien zu speichern. Placement Groups sind Teile der Pools
 
-== Checklisten
+== Checkliste
 
 - [ ] cephadm-Skript herunterladen
 
