@@ -1,7 +1,7 @@
 #import "@preview/cheq:0.2.2": checklist
 #show: checklist
 #import "@preview/codelst:2.0.2": sourcecode
-= 4.1 Mail Services
+= Mail Services
 
 == Postfix
 Postfix ist ein Mail Transfer Agent (MTA), der auf Unix-ähnlichen Betriebssystemen läuft. Er wird verwendet, um E-Mails zu empfangen, weiterzuleiten und zuzustellen. Postfix ist bekannt für seine hohe Leistung, Sicherheit und Flexibilität. Es ist eine beliebte Wahl für Server, die E-Mail-Dienste bereitstellen. Es unterstützt verschiedene Protokolle wie SMTP (Simple Mail Transfer Protocol) und kann mit anderen E-Mail-Servern kommunizieren. Postfix bietet auch Funktionen wie Spam-Filterung, Virenschutz und Unterstützung für virtuelle Domains. Es ist einfach zu konfigurieren und wird häufig in Kombination mit anderen E-Mail-Diensten wie Dovecot oder Cyrus IMAP verwendet.
