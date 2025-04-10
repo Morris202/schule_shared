@@ -28,3 +28,11 @@ Synchronisiert Dateien zwischen mehreren Servern automatisch, wodurch Ausfallsic
 
 == Checkliste
 
+- [ ] ADDS Domäne einrichten
+- [ ] Minimum zwei Server einrichten
+- [ ] File Share am ersten Server anlegen und diesen freigeben
+- [ ] DFS Namespace und Replikation Rolle installieren
+- [ ] DFS Namespace anlegen
+- [ ] File Share mit identer Ordnerstruktur anlegen und diesen freigeben (keine Berechtigungen setzen)
+- [ ] DFS Namespace und Replikation Rolle installieren
+- [ ] DFS Replikation konfigurieren
