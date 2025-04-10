@@ -34,7 +34,8 @@ SMBv3, eingeführt mit Windows 8 und Windows Server 2012, erweitert dieses Proto
 - [ ] Benutzer anlegen
 - [ ] Gruppen anlegen
 - [ ] Benutzer zu Gruppen hinzufügen
-- [ ] Berechtigungen auf Ressourcen setzen
+- [ ] File Share anlegen und diesen freigeben
+- [ ] Berechtigungen für den File Share  setzen
 - [ ] SMBv3 aktivieren
 - [ ] SMBv3 Verschlüsselung aktivieren
 - [ ] GPO für Advanced Auditing anlegen
